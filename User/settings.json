@@ -1,0 +1,50 @@
+{
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "window.menuBarVisibility": "toggle",
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "latex-workshop.view.pdf.viewer": "external",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.startupEditor": "newUntitledFile",
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+    "vim.vimrc.enable": true,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.enabled": false,
+    "window.zoomLevel": -1,
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "w"],
+          "commands": ["workbench.action.splitEditor"]
+        },
+        {
+          "before": ["<leader>", "e"],
+          "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+          "before": ["<leader>", "f"],
+          "commands": ["revealInExplorer"]
+        },
+        {
+          "before": ["<leader>", "h"],
+          "after": ["_"]
+        },
+        {
+          "before": ["<leader>", "l"],
+          "after": ["$"]
+        }
+      ],
+    "vim.leader": "<space>"
+
+}
