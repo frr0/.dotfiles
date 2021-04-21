@@ -21,6 +21,11 @@
 " OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 "--------------------------------------------------------------------------------------------------------
+"Clone just this file
+"
+"wget https://raw.githubusercontent.com/frr0/Dotfiles/main/init.vim
+"
+"--------------------------------------------------------------------------------------------------------
 
 "Programs to download
 "
