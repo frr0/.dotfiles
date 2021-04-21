@@ -20,6 +20,75 @@
 " TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 " OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+"--------------------------------------------------------------------------------------------------------
+
+"Programs to download
+"
+"Python3
+"LazyGit
+"Node.js
+"Texlive
+"Pdftex
+"Fzf
+"Ranger
+"Gcc
+"Java
+"
+"---------------------------------------------------------------------------------------------------------
+"
+"Useful sites and commands
+"-------------------------------------------
+"VIM-PLUG
+"
+"https://github.com/junegunn/vim-plug
+"
+"neovim
+"
+"sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"
+"vim
+"
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+"-------------------------------------------
+"Coc-VIM
+"
+"https://github.com/neoclide/coc.nvim
+"
+":CocInstall coc-json coc-tsserver
+"
+"-------------------------------------------
+"coc-settings.json
+"
+"file to add in .config/nvim (same folder of init.vim)
+"
+" {
+" "languageserver": {
+"   "clangd": {
+"     "command": "clangd",
+"     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+"     "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+"   }
+" }
+" }
+"
+"-------------------------------------------
+"Coc-snippets
+"
+"https://github.com/neoclide/coc-snippets
+"
+":CocInstall coc-snippets
+"
+"-------------------------------------------
+"Util-snippets
+"
+"https://github.com/sirver/UltiSnips
+"
+"-------------------------------------------
+"
+"--------------------------------------------------------------------------------------------------------
 
 set rnu
 set nu
@@ -203,7 +272,7 @@ nnoremap <C-t> <Nop>
 nnoremap <C-y> <Nop>
 "there's a problem, it is slow"
 nnoremap <C-t> <C-d>
-nnoremap <nowait><space>u <C-d>
+nnoremap <nowait><C-y> <C-d>
 " nnoremap <C-y> <C-d>
 "------------------------------------------------------------    
 "------------------------------------------------------------    
@@ -234,7 +303,7 @@ nnoremap <tab>  :BTags <CR>
 nnoremap <space>y :Tagbar <CR>
 "------------------------------------------------------------                   
 nnoremap <space>f :Files <CR>
-nnoremap <space>l :Lines <CR>
+nnoremap <space>j :Lines <CR>
 nnoremap <space>k :BCommits <CR>
 nnoremap <space>b :tabe <CR>
 nnoremap <space>w :vsp <CR>
