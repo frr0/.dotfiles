@@ -318,8 +318,8 @@ map <F7> :w  <CR> :packadd termdebug <CR>
 autocmd filetype c nnoremap <F6> :Termdebug %:r<CR><c-w>2j<c-w>L
 " autocmd filetype c nnoremap <space>ma make  :e  %:r<CR><c-w>2j<c-w>L
 " autocmd filetype c nnoremap <space>cd :packadd termdebug <CR> :Termdebug %:r<CR><c-w>2j<c-w>L
-nnoremap <space>te :below vertical terminal <CR> 
-nnoremap <space>tr :NERDTreeToggle <CR> 
+nnoremap <F2> :below vertical terminal <CR> 
+nnoremap <F10> :NERDTreeToggle <CR> 
 nnoremap <space>v :bn <CR>
 nnoremap <leader>. :bn <CR>
 nnoremap <nowait><space>d :bd <CR>
@@ -668,7 +668,7 @@ nnoremap <silent><nowait> <space>oo  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 " nnoremap <silent><nowait> <space>ss  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>jj  :<C-u>CocNext<CR>
+" nnoremap <silent><nowait> <space>jj  :<C-u>CocNext<CR>
 " Do default action for previous item.
 " nnoremap <silent><nowait> <space>kk  :<C-u>CocPrev<CR>
 " Resume latest coc list.
