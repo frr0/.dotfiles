@@ -103,6 +103,15 @@
 ":CocInstall coc-java
 " and many others
 "--------------------------------------------------------------------------------------------------------
+"Dev-Icons
+"
+"https://github.com/ryanoasis/vim-devicons                          #second
+"https://github.com/ryanoasis/nerd-fonts#font-installation          #first
+"
+"mkdir -p ~/.local/share/fonts
+"cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+"
+"--------------------------------------------------------------------------------------------------------
 
 set rnu
 set nu
@@ -394,9 +403,12 @@ let g:system_copy#copy_command='xclip -sel clipboard'
 " let g:airline_theme='gruvbox'
 let g:airline_theme='apprentice'                                               
 let g:airline_powerline_fonts = 0
-let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD      
+" let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD
                                                                                                                
 "TABLINE:                                                          
+
+let g:airline_section_a = airline#section#create(['mode'])
+
                                                              
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -412,6 +424,48 @@ let g:airline#extensions#tabline#show_splits = 0       " disables the buffer nam
 let g:airline#extensions#tabline#show_tab_nr = 1       " disable tab numbers                                                     
 let g:airline#extensions#tabline#show_tab_type = 1     " disables the weird ornage arrow on the tabline                        
 let g:airline#extensions#hunks#enabled=0               " git
+let g:airline_powerline_fonts = 1
+" the separator used on the left side
+let g:airline_left_sep=''
+" the separator used on the right side 
+let g:airline_right_sep=''
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.dirty='⚡'
+
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = '☰'
+" let g:airline_symbols.maxlinenr = ''
+" let g:airline_symbols.dirty='⚡'
                                                                                                                               
 set laststatus=2                                                                                                     
                                                                                                                    
