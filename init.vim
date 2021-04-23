@@ -65,7 +65,7 @@
 ":CocInstall coc-json coc-tsserver
 "
 "-------------------------------------------
-"coc-settings.json
+"coc-settings.json for c/cpp...
 "
 "file to add in .config/nvim (same folder of init.vim)
 "
@@ -92,7 +92,16 @@
 "https://github.com/sirver/UltiSnips
 "
 "-------------------------------------------
+"IMPORTANT!!!
+"COC Extensions
 "
+"https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+"https://github.com/neoclide/coc-sources #others(less important)
+"
+":CocInstall coc-clangd #c/c++/c_object..
+":CocInstall coc-python
+":CocInstall coc-java
+" and many others
 "--------------------------------------------------------------------------------------------------------
 
 set rnu
