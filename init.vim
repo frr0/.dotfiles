@@ -354,17 +354,21 @@ nnoremap <space>j :Lines <CR>
 nnoremap <space>k :BCommits <CR>
 nnoremap <space>b :tabe <CR>
 nnoremap <space>w :vsp <CR>
+nnoremap <space>i :split <CR>
+nnoremap <silent> <space>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <space>- :exe "resize " . (winheight(0) * 2/3)<CR>
 ""------------------------------------------------------------                   
 nnoremap <space>G :! git add * <CR> ! git commit -m "%" <CR> ! git push <CR>
 nnoremap <leader>e :!cat % <CR>
 nnoremap <space>M :wa <CR> :! make <CR>
 nnoremap <space>n :wa <CR> :! make <CR>
 nnoremap <M-v> :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
-"" noremap <space>V :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
+noremap <space>V :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
 nnoremap <space>r :RangerNewTab <CR>
 nnoremap <leader>n :noh <CR>
 nnoremap <space>ò :noh <CR>
 nnoremap <leader>s :set spell <CR>
+nnoremap <space>S :mksession! session.vim <CR>
 "-----------------------------------------------------------------------------------------------------"
 imap <M-b> public class First {<CR>public static void main(String[] args) {<CR>System.out.println("Hello OOP!");<CR>}<CR>} 
 "Makefile---------------------------------------------------------------------------------------------"
