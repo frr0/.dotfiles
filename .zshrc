@@ -7,15 +7,35 @@ alias l=lazygit
 alias n=nvim
 alias m=make
 alias b=bash
+alias c=clear
+alias k="t kill-server"
 alias zc="nvim ~/.zshrc"
 alias szc="source ~/.zshrc"
 alias v="nvim -S"
+alias p="nvim -p"
 alias nn="nvim ~/.config/nvim/init.vim"
 alias i3="nvim ~/.config/i3/config"
 alias la="ls -lah"
 alias lh="ls -lh"
 alias e="cd .. && cd .. && cd run/media/"
 alias dot="cd ~/Varie/dotfiles"
+alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
+# alias man=vman
+
+# plugins=(
+#   git
+#   bundler
+#   dotenv
+#   osx
+#   rake
+#   rbenv
+#   ruby
+# )
+
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="agnoster"
+
+HYPHEN_INSENSITIVE="true"
 
 autoload -Uz vcs_info
 precmd() { vcs_info }
@@ -39,6 +59,7 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

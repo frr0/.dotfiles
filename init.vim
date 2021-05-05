@@ -122,7 +122,8 @@ set shiftwidth=4
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set encoding=UTF-8
 set noshowmode
-set spell
+" set spell
+set nospell
 set spelllang=en_us
 
 let g:airline#extensions#tabline#enabled = 1
@@ -143,13 +144,11 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'puremourning/vimspector'
 Plug 'neoclide/coc.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 Plug 'brennier/quicktex'                             
 Plug 'raimondi/delimitmate'                         
-Plug 'edkolev/tmuxline.vim'                              
 Plug 'liuchengxu/vim-which-key'
 Plug 'majutsushi/tagbar'                                          
 Plug 'scrooloose/nerdcommenter'                                  
@@ -177,14 +176,19 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'jez/vim-superman'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'harenome/vim-mipssyntax'
+Plug 'unblevable/quick-scope'
+Plug 'vim-test/vim-test'
+Plug 'edkolev/tmuxline.vim'
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'yggdroot/indentline'
+" Plug 'dense-analysis/ale'
 " Plug 'itchyny/lightline.vim'
-"Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'BrandonRoehl/auto-omni'
 " Plug 'valloric/youcompleteme'
-" Plug 'dense-analysis/ale'
-""Plug 'codota/tabnine-vim'
-""Plug 'zxqfl/tabnine-vim'
-""Plug 'yggdroot/indentline'
+" Plug 'codota/tabnine-vim'
+" Plug 'zxqfl/tabnine-vim'
 " Plug 'glepnir/galaxyline.nvim'
 " Plug 'nvim-lua/popup.nvim'
 " Plug 'nvim-lua/plenary.nvim'
@@ -256,8 +260,8 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/Documents/.a/snippets/']
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
-setlocal spell
-set spelllang=en_us
+" setlocal spell
+" set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
@@ -270,6 +274,22 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+"------------------------------------------------------------    
+"Indent line
+" let g:indentLine_char       = '▏'
+" let g:indentLine_setConceal = 0
+let g:indent_guides_enable_on_vim_startup = 1
+
+" colorscheme tir_black
+" set ts=2 sw=2 et
+" let g:indent_guides_start_level = 1
+" let gindent_guides_guide_size = 2
+" hi IndentGuidesOdd  guibg=red   ctermbg=3
+" hi IndentGuidesEven guibg=green ctermbg=4
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+"
 
 "------------------------------------------------------------    
 "key
@@ -280,6 +300,8 @@ nnoremap <space>q :wq<cr>
 nnoremap <nowait><space>s :wa<cr>
 nnoremap <space>0 :q!<cr>
 imap <nowait><space> <space>
+nnoremap - ,
+nnoremap F t
 nnoremap \ 0
 vmap 1 0
 nnoremap 0 $
@@ -292,10 +314,10 @@ nnoremap <C-)> <C-(>
 vmap <C-)> <C-(>
 nnoremap <C-(> <C-)>
 vmap <C-(> <C-)>
-nnoremap <C-t> <Nop>
+" nnoremap <C-t> <Nop>
 nnoremap <C-y> <Nop>
 "there's a problem, it is slow"
-nnoremap <C-t> <C-d>
+" nnoremap <C-t> <C-d>
 nnoremap <nowait><C-y> <C-d>
 " nnoremap <C-y> <C-d>
 "------------------------------------------------------------    
@@ -342,6 +364,7 @@ nnoremap <M-v> :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Va
 nnoremap <space>r :RangerNewTab <CR>
 nnoremap <leader>n :noh <CR>
 nnoremap <space>ò :noh <CR>
+nnoremap <leader>s :set spell <CR>
 "-----------------------------------------------------------------------------------------------------"
 imap <M-b> public class First {<CR>public static void main(String[] args) {<CR>System.out.println("Hello OOP!");<CR>}<CR>} 
 "Makefile---------------------------------------------------------------------------------------------"
@@ -707,7 +730,7 @@ endfunction
 
 
 nnoremap <nowait> <space>t :call Term_toggle(10)<cr>
-tnoremap <space>t <C-\><C-n>:call Term_toggle(10)<cr>
+tnoremap <leader>t <C-\><C-n>:call Term_toggle(10)<cr>
 " tnoremap <space>r :bd!<cr>
 " tnoremap <space>d :bd<cr>
 
