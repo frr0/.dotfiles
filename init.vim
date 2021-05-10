@@ -133,6 +133,7 @@ syntax on
 set mouse=a
 
 call plug#begin('~/.vim/plugged')
+Plug 'mhinz/vim-startify'
 Plug 'wikitopian/hardmode'
 Plug 'tclem/vim-arduino'
 Plug 'sirver/ultisnips'
@@ -180,6 +181,7 @@ Plug 'harenome/vim-mipssyntax'
 Plug 'unblevable/quick-scope'
 Plug 'vim-test/vim-test'
 Plug 'edkolev/tmuxline.vim'
+Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'yggdroot/indentline'
 " Plug 'dense-analysis/ale'
@@ -194,6 +196,27 @@ Plug 'edkolev/tmuxline.vim'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
+
+
+set hidden
+ 
+" Note that not everyone likes working this way (with the hidden option).
+" Alternatives include using tabs or split windows instead of re-using the same
+" window as mentioned above, and/or either of the following options:
+" set confirm
+" set autowriteall
+ 
+" Better command-line completion
+set wildmenu
+ 
+" Show partial commands in the last line of the screen
+set showcmd
+ 
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+
+
 
 "-----------------------------------------------------------------------------------------"
 "JK ycm first 2 and coc others
@@ -334,6 +357,7 @@ nnoremap <space>P :wa <CR> :!python3 % <CR>
 nnoremap <space>J :wa <CR> :!javac % && java %< <CR>
 nnoremap <space>2 :wa <CR> :tabe term://javac % && java %< <CR>
 map! <F4> :!./%< 
+map! <F5> :so ~/.vims/ 
 map <F5> :w <CR> :!gcc -g % -o %< <CR>
 " map <space>co :w <CR> :!gcc -g % -o %< <CR>
 map <F7> :w  <CR> :packadd termdebug <CR>
@@ -369,6 +393,8 @@ nnoremap <leader>n :noh <CR>
 nnoremap <space>ò :noh <CR>
 nnoremap <leader>s :set spell <CR>
 nnoremap <space>S :mksession! session.vim <CR>
+nnoremap <space>O :so session.vim <CR>
+nnoremap <space>o :so% <CR>
 "-----------------------------------------------------------------------------------------------------"
 imap <M-b> public class First {<CR>public static void main(String[] args) {<CR>System.out.println("Hello OOP!");<CR>}<CR>} 
 "Makefile---------------------------------------------------------------------------------------------"
