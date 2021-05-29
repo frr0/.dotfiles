@@ -182,6 +182,9 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-test/vim-test'
 Plug 'edkolev/tmuxline.vim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'szw/vim-maximizer'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'ThePrimeagen/harpoon'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'yggdroot/indentline'
 " Plug 'dense-analysis/ale'
@@ -350,6 +353,8 @@ nnoremap <nowait><C-y> <C-d>
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 "------------------------------------------------------------    
 "------------------------------------------------------------    
+nnoremap <space>\ :Startify <CR> 
+"------------------------------------------------------------    
 nnoremap <space>1 :w <CR> :!gcc -g % -o %< && ./%< <CR>
 nnoremap <space>C :w <CR> :tabe term://gcc -g % -o %< && ./%< <CR>
 nnoremap <space>P :wa <CR> :!python3 % <CR>
@@ -357,8 +362,8 @@ nnoremap <space>P :wa <CR> :!python3 % <CR>
 nnoremap <space>J :wa <CR> :!javac % && java %< <CR>
 nnoremap <space>2 :wa <CR> :tabe term://javac % && java %< <CR>
 map! <F4> :!./%< 
-map! <F5> :so ~/.vims/ 
-map <F5> :w <CR> :!gcc -g % -o %< <CR>
+" map! <F5> :so ~/.vims/
+" map <F5> :w <CR> :!gcc -g % -o %< <CR>
 " map <space>co :w <CR> :!gcc -g % -o %< <CR>
 map <F7> :w  <CR> :packadd termdebug <CR>
 autocmd filetype c nnoremap <F6> :Termdebug %:r<CR><c-w>2j<c-w>L
@@ -368,7 +373,8 @@ nnoremap <F2> :below vertical terminal <CR>
 nnoremap <F10> :NERDTreeToggle <CR> 
 nnoremap <space>v :bn <CR>
 nnoremap <leader>. :bn <CR>
-nnoremap <nowait><space>d :bd <CR>
+" nnoremap <nowait><space>d :bd <CR>
+nnoremap <nowait><space>X :bd <CR>
 nnoremap <tab>  :BTags <CR>
 nnoremap <space>y :Tagbar <CR>
 nnoremap <C-Tab> gt
@@ -380,7 +386,9 @@ nnoremap <space>b :tabe <CR>
 nnoremap <space>w :vsp <CR>
 nnoremap <space>i :split <CR>
 nnoremap <silent> <space>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <space>* :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <space>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <space>_ :exe "resize " . (winwidth(0) * 2/3)<CR>
 ""------------------------------------------------------------                   
 nnoremap <space>G :! git add * <CR> ! git commit -m "%" <CR> ! git push <CR>
 nnoremap <leader>e :!cat % <CR>
@@ -729,13 +737,44 @@ nnoremap <silent><nowait> <space>pp  :<C-u>CocListResume<CR>
 
 nnoremap <nowait><space>e :CocCommand explorer<CR>
 "-------------------------------------------------------------------------------------------------------------------"
-" let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_enable_mappings = 'HUMAN'
 " nnoremap <space>du :call vimspector#Launch()<CR>
-" nnoremap <space>dx :VimspectorReset<CR>
-" nnoremap <space>de :VimspectorEval
-" nnoremap <space>dw :VimspectorWatch
-" nnoremap <space>do :VimspectorShowOutput
-" let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]
+nnoremap <F5> :call vimspector#Launch()<CR>
+nnoremap <space>dx :VimspectorReset<CR>
+nnoremap <space>de :VimspectorEval
+nnoremap <space>dw :VimspectorWatch
+nnoremap <space>do :VimspectorShowOutput
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]
+
+" Debugger remaps
+nnoremap <leader>m :MaximizerToggle!<CR>
+" nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+" nmap <leader>dj <Plug>VimspectorStepOver
+nmap <F10> <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+" nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <F9> <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+
+" <Plug>VimspectorStop
+" <Plug>VimspectorPause
+" <Plug>VimspectorAddFunctionBreakpoint
+
 "-----------------------------------------------------------------------------------------------------"
 "Toggle terminal"
 let g:term_buf = 0
