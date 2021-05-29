@@ -103,6 +103,33 @@
 ":CocInstall coc-java
 " and many others
 "--------------------------------------------------------------------------------------------------------
+"https://github.com/puremourning/vimspector#supported-languages
+" :VimspectorInstall vscode-cpptools vscode-java-debug debugpy
+"
+" .vimspector.json
+"
+" example w/ c/cpp
+"
+" {
+    "configurations": {
+        "Launch": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "request": "launch",
+                "program": "${workspaceRoot}/program",
+                "args": ["F1.txt", "F2.txt"],
+                "cwd": "${workspaceRoot}",
+                "environment": [],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb"
+"             }
+"           }
+"      }
+" }
+
+
+"--------------------------------------------------------------------------------------------------------
 "Dev-Icons
 "
 "https://github.com/ryanoasis/vim-devicons                          #second
@@ -370,7 +397,7 @@ autocmd filetype c nnoremap <F6> :Termdebug %:r<CR><c-w>2j<c-w>L
 " autocmd filetype c nnoremap <space>ma make  :e  %:r<CR><c-w>2j<c-w>L
 " autocmd filetype c nnoremap <space>cd :packadd termdebug <CR> :Termdebug %:r<CR><c-w>2j<c-w>L
 nnoremap <F2> :below vertical terminal <CR> 
-nnoremap <F10> :NERDTreeToggle <CR> 
+nnoremap <space>T :NERDTreeToggle <CR> 
 nnoremap <space>v :bn <CR>
 nnoremap <leader>. :bn <CR>
 " nnoremap <nowait><space>d :bd <CR>
@@ -747,7 +774,7 @@ nnoremap <space>do :VimspectorShowOutput
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]
 
 " Debugger remaps
-nnoremap <leader>m :MaximizerToggle!<CR>
+nnoremap <space>. :MaximizerToggle!<CR>
 " nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
 nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
@@ -760,9 +787,11 @@ nnoremap <leader>de :call vimspector#Reset()<CR>
 nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 
 nmap <leader>dl <Plug>VimspectorStepInto
+nmap <F8> <Plug>VimspectorStepInto
 " nmap <leader>dj <Plug>VimspectorStepOver
 nmap <F10> <Plug>VimspectorStepOver
-nmap <leader>dk <Plug>VimspectorStepOut
+" nmap <leader>dk <Plug>VimspectorStepOut
+nmap <F12> <Plug>VimspectorStepOut
 nmap <leader>d_ <Plug>VimspectorRestart
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 
