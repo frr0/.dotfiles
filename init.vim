@@ -210,6 +210,7 @@ Plug 'vim-test/vim-test'
 Plug 'edkolev/tmuxline.vim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'szw/vim-maximizer'
+Plug 'voldikss/vim-floaterm'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'ThePrimeagen/harpoon'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -422,13 +423,13 @@ nnoremap <leader>e :!cat % <CR>
 nnoremap <space>M :wa <CR> :! make <CR>
 nnoremap <space>n :wa <CR> :! make <CR>
 nnoremap <M-v> :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
-noremap <space>V :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
+noremap <space>V :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./program <CR>
 nnoremap <space>r :RangerNewTab <CR>
 nnoremap <leader>n :noh <CR>
 nnoremap <space>ò :noh <CR>
 nnoremap <leader>s :set spell <CR>
-nnoremap <space>S :mksession! session.vim <CR>
-nnoremap <space>O :so session.vim <CR>
+nnoremap <space>S :mksession! .session.vim <CR>
+nnoremap <space>O :so .session.vim <CR>
 nnoremap <space>o :so% <CR>
 "-----------------------------------------------------------------------------------------------------"
 imap <M-b> public class First {<CR>public static void main(String[] args) {<CR>System.out.println("Hello OOP!");<CR>}<CR>} 
@@ -805,7 +806,9 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 " <Plug>VimspectorAddFunctionBreakpoint
 
 "-----------------------------------------------------------------------------------------------------"
+"
 "Toggle terminal"
+"-----------------------------------------------------------------------------------------------------"
 let g:term_buf = 0
 let g:term_win = 0
 
@@ -827,8 +830,8 @@ function! Term_toggle(height)
 endfunction
 
 
-nnoremap <nowait> <space>t :call Term_toggle(10)<cr>
-tnoremap <leader>t <C-\><C-n>:call Term_toggle(10)<cr>
+nnoremap <space>tt :call Term_toggle(10)<cr>
+tnoremap <leader>tt <C-\><C-n>:call Term_toggle(10)<cr>
 " tnoremap <space>r :bd!<cr>
 " tnoremap <space>d :bd<cr>
 
@@ -838,7 +841,10 @@ nnoremap <silent> <leader>m :wa <CR> :LazyGit<CR>
 nnoremap <silent> <space>g :wa <CR> :LazyGit<CR>
 
 "-----------------------------------------------------------------------------------------------------"
+"
+"-----------------------------------------------------------------------------------------------------"
 "Easy-motions"
+"-----------------------------------------------------------------------------------------------------"
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
@@ -855,4 +861,39 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+"-----------------------------------------------------------------------------------------------------"
+"unzip jar
+au BufReadCmd *.jar call zip#Browse(expand("<amatch>"))
+"-----------------------------------------------------------------------------------------------------"
+"
+"-----------------------------------------------------------------------------------------------------"
+"floaterm
+"-----------------------------------------------------------------------------------------------------"
+let g:floaterm_keymap_toggle = '<F1>'
+let g:floaterm_keymap_next   = '<space>tr'
+let g:floaterm_keymap_prev   = '<space>t3'
+let g:floaterm_keymap_new    = '<space>t4'
+
+" Floaterm
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_autoinsert=1
+let g:floaterm_width=0.8
+let g:floaterm_height=0.8
+let g:floaterm_wintitle=0
+let g:floaterm_autoclose=1
+
+" let g:which_key_map.t = {
+      " \ 'name' : '+terminal' ,
+      " \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
+      " \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
+      " \ 'g' : [':FloatermNew lazygit'                           , 'git'],
+      " \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
+      " \ 'n' : [':FloatermNew node'                              , 'node'],
+      " \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      " \ 'p' : [':FloatermNew python'                            , 'python'],
+      " \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      " \ 't' : [':FloatermToggle'                                , 'toggle'],
+      " \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      " \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      " \ }
 "-----------------------------------------------------------------------------------------------------"
