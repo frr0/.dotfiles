@@ -144,9 +144,9 @@ set rnu
 set nu
 let mapleader=","
 set timeout timeoutlen=1500
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set encoding=UTF-8
 set noshowmode
 " set spell
@@ -419,6 +419,10 @@ nnoremap <silent> <space>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <space>_ :exe "resize " . (winwidth(0) * 2/3)<CR>
 ""------------------------------------------------------------                   
 nnoremap <space>G :! git add * <CR> ! git commit -m "%" <CR> ! git push <CR>
+nnoremap <leader>B :Git Blame <CR>
+nnoremap <leader>A :Git add . <CR>
+nnoremap <leader>ci :Git commit <CR>
+nnoremap <leader>pu :Git push <CR>
 nnoremap <leader>e :!cat % <CR>
 nnoremap <space>M :wa <CR> :! make <CR>
 nnoremap <space>n :wa <CR> :! make <CR>
@@ -476,7 +480,7 @@ set textwidth=80
 ""set IndentLinesDisable
                                                                                                                           
 " map <Tab> <C-W>
-set tabstop=4                                                                                   
+set tabstop=2                                                                                   
 
 "PLUGINS                                                                                         
 " set rtp+=~/.vim/PLUGVIM/tabnine-vim
@@ -877,8 +881,8 @@ let g:floaterm_keymap_new    = '<space>t4'
 " Floaterm
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=1
-let g:floaterm_width=0.8
-let g:floaterm_height=0.8
+let g:floaterm_width=0.95
+let g:floaterm_height=0.95
 let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
@@ -896,4 +900,13 @@ let g:floaterm_autoclose=1
       " \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
       " \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       " \ }
+"-----------------------------------------------------------------------------------------------------"
+"
+"-----------------------------------------------------------------------------------------------------"
+"test
+"-----------------------------------------------------------------------------------------------------"
+"Java
+let test#java#runner = 'gradletest'
+command! -nargs=* -bar IntegrationTest call test#run('integration', split(<q-args>))
+nnoremap <silent><leader>itf :IntegrationTest -Dtest=foo -DfailIfNoTests=false -am -Dpmd.skip=true -Dcheckstyle.skip=true<CR>
 "-----------------------------------------------------------------------------------------------------"
