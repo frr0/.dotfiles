@@ -42,7 +42,9 @@
 "---------------------------------------------------------------------------------------------------------
 "
 "Useful sites and commands
+"
 "-------------------------------------------
+"
 "VIM-PLUG
 "
 "https://github.com/junegunn/vim-plug
@@ -58,6 +60,7 @@
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
 "-------------------------------------------
+"
 "Coc-VIM
 "
 "https://github.com/neoclide/coc.nvim
@@ -65,6 +68,7 @@
 ":CocInstall coc-json coc-tsserver
 "
 "-------------------------------------------
+"
 "coc-settings.json for c/cpp...
 "
 "file to be added in .config/nvim (same folder of init.vim)
@@ -81,6 +85,7 @@
 " }
 "
 "-------------------------------------------
+"
 "Coc-snippets
 "
 "https://github.com/neoclide/coc-snippets
@@ -88,12 +93,15 @@
 ":CocInstall coc-snippets
 "
 "-------------------------------------------
+"
 "Util-snippets
 "
 "https://github.com/sirver/UltiSnips
 "
 "-------------------------------------------
+"
 "IMPORTANT!!!
+"
 "COC Extensions
 "
 "https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
@@ -103,9 +111,12 @@
 ":CocInstall coc-python
 ":CocInstall coc-java
 " and many others
+"
 "--------------------------------------------------------------------------------------------------------
+"
 "https://github.com/puremourning/vimspector#supported-languages
-" :VimspectorInstall vscode-cpptools vscode-java-debug debugpy
+"
+":VimspectorInstall vscode-cpptools vscode-java-debug debugpy
 "
 " .vimspector.json
 "
@@ -131,6 +142,7 @@
 
 
 "--------------------------------------------------------------------------------------------------------
+"
 "Dev-Icons
 "
 "https://github.com/ryanoasis/vim-devicons                          #second
