@@ -67,7 +67,8 @@
 "-------------------------------------------
 "coc-settings.json for c/cpp...
 "
-"file to add in .config/nvim (same folder of init.vim)
+"file to be added in .config/nvim (same folder of init.vim)
+"not sure if it is necessary
 "
 " {
 " "languageserver": {
@@ -137,6 +138,26 @@
 "
 "mkdir -p ~/.local/share/fonts
 "cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+"
+"--------------------------------------------------------------------------------------------------------
+"
+"
+"W/out the following clones the debug won't work
+"
+"
+"git clone https://github.com/frr0/Project_create
+"
+"
+"In the home directory, cause if not, you'll have to modify the zsh aliases
+"
+"
+"git clone https://github.com/frr0/Dotfiles
+"
+"
+"just type "cc" and it will create a c project ready to work and debug, with all the file needed.
+"same thing for cpp by typing "ccp" (note! it's not a typo, type "ccp" or just change the alias)
+"others will be added
+"
 "
 "--------------------------------------------------------------------------------------------------------
 
@@ -211,6 +232,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'szw/vim-maximizer'
 Plug 'voldikss/vim-floaterm'
+Plug 'ap/vim-css-color'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'ThePrimeagen/harpoon'
 " Plug 'nathanaelkane/vim-indent-guides'
