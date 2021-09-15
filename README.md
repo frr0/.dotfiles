@@ -17,7 +17,7 @@ My personal dotfiles.
 - ohmyzsh
 
 
-##VIM-PLUG
+## VIM-PLUG
 
 https://github.com/junegunn/vim-plug
 
@@ -33,7 +33,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 -------------------------------------------
 
-##Coc-VIM
+## Coc-VIM
 
 https://github.com/neoclide/coc.nvim
 
@@ -42,7 +42,7 @@ https://github.com/neoclide/coc.nvim
 -------------------------------------------
 
 
-##Coc-snippets
+### Coc-snippets
 
 https://github.com/neoclide/coc-snippets
 
@@ -50,15 +50,15 @@ https://github.com/neoclide/coc-snippets
 
 -------------------------------------------
 
-###Util-snippets
+### Util-snippets
 
 https://github.com/sirver/UltiSnips
 
 -------------------------------------------
 
-###IMPORTANT!!!
+### IMPORTANT!!!
 
-###COC Extensions
+### COC Extensions
 
 https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
 https://github.com/neoclide/coc-sources #others(less important)
@@ -70,7 +70,7 @@ https://github.com/neoclide/coc-sources #others(less important)
 
 --------------------------------------------------------------------------------------------------------
 
-##Vimspector
+## Vimspector
 
 https://github.com/puremourning/vimspector#supported-languages
 
@@ -102,7 +102,7 @@ https://github.com/puremourning/vimspector#supported-languages
 ```
 --------------------------------------------------------------------------------------------------------
 
-##Dev-Icons
+## Dev-Icons
 
 https://github.com/ryanoasis/vim-devicons                          #second
 https://github.com/ryanoasis/nerd-fonts#font-installation          #first
@@ -112,7 +112,7 @@ cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Co
 
 --------------------------------------------------------------------------------------------------------
 
-##Other
+## Other
 
 W/out the following clones the debug won't work
 
