@@ -38,6 +38,8 @@
 "Ranger
 "Gcc
 "Java
+"zsh
+"ohmyzsh
 "
 "---------------------------------------------------------------------------------------------------------
 "
@@ -245,8 +247,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'szw/vim-maximizer'
 Plug 'voldikss/vim-floaterm'
 Plug 'ap/vim-css-color'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'ThePrimeagen/harpoon'
+Plug 'othree/html5.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
+Plug 'shime/vim-livedown'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'yggdroot/indentline'
 " Plug 'dense-analysis/ale'
@@ -257,9 +261,14 @@ Plug 'ap/vim-css-color'
 " Plug 'codota/tabnine-vim'
 " Plug 'zxqfl/tabnine-vim'
 " Plug 'glepnir/galaxyline.nvim'
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 call plug#end()
 
 
@@ -521,14 +530,14 @@ set tabstop=2
                                    
 syntax enable                                                                                                                   
 set background=dark                                                                                                            
-colorscheme gruvbox                                                                                      
+colorscheme onedark                                                                                      
                                                                                                                               
 set mouse=a                                                                                                       
 set go+=a                                                                         
 let g:system_copy#copy_command='xclip -sel clipboard'                                                               
                                                                                                  
 " let g:airline_theme='gruvbox'
-let g:airline_theme='apprentice'                                               
+let g:airline_theme='violet'                                               
 let g:airline_powerline_fonts = 0
 " let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD
                                                                                                                
@@ -943,4 +952,36 @@ let g:floaterm_autoclose=1
 let test#java#runner = 'gradletest'
 command! -nargs=* -bar IntegrationTest call test#run('integration', split(<q-args>))
 nnoremap <silent><leader>itf :IntegrationTest -Dtest=foo -DfailIfNoTests=false -am -Dpmd.skip=true -Dcheckstyle.skip=true<CR>
+"-----------------------------------------------------------------------------------------------------"
+"
+"Telescope
+"-----------------------------------------------------------------------------------------------------"
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+"-----------------------------------------------------------------------------------------------------"
+"vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
+"-----------------------------------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------------------------------"
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+" the browser to use, can also be firefox, chrome or other, depending on your executable
+let g:livedown_browser = "firefox"
+
 "-----------------------------------------------------------------------------------------------------"
