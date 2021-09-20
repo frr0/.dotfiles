@@ -68,6 +68,7 @@ https://github.com/sirver/UltiSnips
 ### COC Extensions
 
 https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+
 https://github.com/neoclide/coc-sources #others(less important)
 
 first for c/c++/c_object..
@@ -116,8 +117,9 @@ https://github.com/puremourning/vimspector#supported-languages
 
 ## Dev-Icons
 
-https://github.com/ryanoasis/vim-devicons                          #second
 https://github.com/ryanoasis/nerd-fonts#font-installation          #first
+
+https://github.com/ryanoasis/vim-devicons                          #second
 
 ```
 mkdir -p ~/.local/share/fonts
