@@ -33,7 +33,6 @@ vim
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 ```
 -------------------------------------------
 
@@ -71,8 +70,9 @@ https://github.com/sirver/UltiSnips
 https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
 https://github.com/neoclide/coc-sources #others(less important)
 
+first for c/c++/c_object..
 ```
-:CocInstall coc-clangd #c/c++/c_object..
+:CocInstall coc-clangd 
 :CocInstall coc-python
 :CocInstall coc-java
 ```
@@ -85,12 +85,14 @@ https://github.com/neoclide/coc-sources #others(less important)
 https://github.com/puremourning/vimspector#supported-languages
 
 ```
-:VimspectorInstall vscode-cpptools vscode-java-debug debugpy
+:VimspectorInstall vscode-cpptools 
+:VimspectorInstall vscode-java-debug 
+:VimspectorInstall debugpy
 ```
 
  .vimspector.json
 
-  example w/ c/cpp
+  example with c/cpp
 ```
   {
     "configurations": {
@@ -126,7 +128,7 @@ cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Co
 
 ## Other
 
-W/out the following clones the debug won't work
+Without the following clones the debug won't work
 
 
 ```
