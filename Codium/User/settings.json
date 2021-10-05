@@ -1,0 +1,94 @@
+{
+  "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/vimscript/nv-vscode/init.vim",
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.startupEditor": "newUntitledFile",
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+    "vim.vimrc.enable": true,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.enabled": false,
+    "window.zoomLevel": -1,
+    "C_Cpp.intelliSenseEngine": "Enabled",
+    "latex-workshop.view.pdf.viewer": "tab",
+
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>","t"],
+          "commands": ["workbench.action.terminal.toggleTerminal"]
+        },
+        {
+          "before": ["<leader>","s"],
+          "commands": ["workbench.action.files.save"]
+        },
+        {
+          "before": ["<leader>", "w"],
+          "commands": ["workbench.action.splitEditor"]
+        },
+        {
+          "before": ["<leader>", "e"],
+          "commands": ["-workbench.view.explorer"],
+          "when": ["viewContainer.workbench.view.explorer.enabled"]
+        },
+        {
+          "before": ["<leader>", "f"],
+          "commands": ["revealInExplorer"]
+        },
+        {
+          "before": ["<leader>", "f"],
+          "commands": ["filesExplorer.findInFolder"],
+          "when": ["explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"]
+        },
+        {
+          "before": ["<leader>", "h"],
+          "after": ["_"]
+        },
+        {
+          "before": ["<C-w>", "h"],
+          "after": ["<C-h>"]
+        },
+        {
+          "before": ["<C-w>", "j"],
+          "after": ["<C-j>"]
+        },
+        {
+          "before": ["<C-w>", "k"],
+          "after": ["<C-k"]
+        },
+        {
+          "before": ["<C-w>", "l"],
+          "after": ["<C-l>"]
+        },
+        {
+          "before": ["1"],
+          "after": ["0"]
+        },
+        {
+          "before": ["0"],
+          "after": ["$"]
+        }
+      ],
+    "vim.leader": "<space>",
+    "C_Cpp.addNodeAddonIncludePaths": true,
+    "window.menuBarVisibility": "toggle",
+    "explorer.confirmDelete": false,
+    "tabnine.experimentalAutoImports": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "workbench.tree.renderIndentGuides": "none",
+    "editor.renderIndentGuides": false,
+    "workbench.colorTheme": "Simple Dark",
+    "workbench.sideBar.location": "right"
+
+}
