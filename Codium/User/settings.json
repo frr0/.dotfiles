@@ -24,10 +24,6 @@
     },
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-          "before": ["<leader>","t"],
-          "commands": ["workbench.action.terminal.toggleTerminal"]
-        },
-        {
           "before": ["<leader>","s"],
           "commands": ["workbench.action.files.save"]
         },
@@ -80,7 +76,6 @@
       ],
     "vim.leader": "<space>",
     "C_Cpp.addNodeAddonIncludePaths": true,
-    "window.menuBarVisibility": "toggle",
     "explorer.confirmDelete": false,
     "tabnine.experimentalAutoImports": false,
     "editor.suggestSelection": "first",
@@ -89,6 +84,7 @@
     "workbench.tree.renderIndentGuides": "none",
     "editor.renderIndentGuides": false,
     "workbench.colorTheme": "Simple Dark",
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "window.menuBarVisibility": "toggle"
 
 }

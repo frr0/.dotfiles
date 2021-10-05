@@ -13,6 +13,10 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
+        "key": "alt+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
     },
