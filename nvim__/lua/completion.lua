@@ -20,31 +20,16 @@ require'compe'.setup {
         calc = {kind = "   (Calc)"},
         vsnip = {kind = "   (Snippet)"},
         nvim_lsp = {kind = "   (LSP)"},
-        path = true,
-        buffer = true,
-        calc = false,
-        vsnip = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        spell = true,
-        tags = true,
-        snippets_nvim = true,
-        treesitter = true,
-        ultisnips = true,
-        coc-word = true,
-        coc-dictionary = true,
-        -- coc-clangd = true,
         -- nvim_lua = {kind = "  "},
-		nvim_lua = true,
+		nvim_lua = false,
         spell = {kind = "   (Spell)"},
         tags = false,
         vim_dadbod_completion = true,
         snippets_nvim = {kind = "  "},
         ultisnips = {kind = "  "},
         treesitter = {kind = "  "},
-        emoji = {kind = " ﲃ  (Emoji)", filetypes={"markdown", "text"}},
+        emoji = {kind = " ﲃ  (Emoji)", filetypes={"markdown", "text"}}
         -- for emoji press : (idk if that in compe tho)
-        coc-word = true
     }
 }
 

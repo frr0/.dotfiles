@@ -17,8 +17,6 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'neoclide/coc.nvim'
-    Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-    Plug 'ackyshake/VimCompletesMe'
 
     Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
     Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
@@ -49,15 +47,15 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'sirver/ultisnips'
-    Plug 'nanozuki/tabby.nvim'
 
 call plug#end()
+
+
 
 colorscheme onedark
 
 " basic settings
 syntax on
-set syntax=c
 set number
 set relativenumber
 set ignorecase      " ignore case
@@ -69,45 +67,16 @@ set expandtab
 set tabstop=2
 set ruler
 set smartindent
-set shiftwidth=2
+set shiftwidth=4
 set hlsearch
-" set virtualedit=all
-set backspace=indent,eol,start "allow backspacing over everything in insert mode
+set virtualedit=all
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set autoindent
-" set spell
 set spelllang=en_us
 set mouse=a  " mouse support
-let g:GitGutterBufferDisable = 1
-autocmd FileType make setlocal noexpandtab "extremely important if you want to use spaces over tabs"
-" filetype plugin on
-" set omnifunc=syntaxcomplete#Complete
-autocmd FileType vim let b:vcm_tab_complete = 'vim'
-autocmd FileType markdown,txt setlocal complete+=k/usr/share/dict/words
-" let g:vcm_omni_pattern
-" let b:vcm_tab_complete
-" let b:vcm_tab_complete
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-" au FileType * execute 'setlocal dict+=~/.vim/words/'.&filetype.'.txt'
-" au FileType * execute 'setlocal dict+=~/.vim/words/10k.txt
+set shortmess+=F
 
 "key
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<tab>" :
-      \ coc#refresh()
-
-" noremap <Up> <Nop>
-" noremap <Down> <Nop>
-" noremap <Left> <Nop>
-" noremap <Right> <Nop>
-"
-" inoremap <esc> <Nop>
-                      
-inoremap <silent><tab> <C-n>
 nnoremap <space>x :wa<cr>
 nnoremap <space>z :xa<cr>
 nnoremap ,z :xa<cr>
@@ -115,16 +84,14 @@ nnoremap <space>q :wq<cr>
 nnoremap <nowait><space>s :wa<cr>
 nnoremap <space>0 :q!<cr>
 imap <nowait><space> <space>
-imap <tab> <C-n>
 nnoremap - ,
+nnoremap F t
 nnoremap \ 0
 vmap 1 0
 nnoremap 0 $
 vmap 0 $
 nnoremap <C-y> <Nop>
 nnoremap <nowait><C-y> <C-d>
-nnoremap <space>gs :GitGutterBufferToggle<cr>
-nnoremap <space>ss :windo set syntax=c<cr>
 "------------------------------------------------------------    
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 "------------------------------------------------------------    
@@ -148,32 +115,22 @@ nnoremap <space>y :Tagbar <CR>
 nnoremap <C-Tab> gt
 "------------------------------------------------------------                   
 nnoremap <space>f :Files <CR>
-nnoremap <space>e :Vex <CR>
 nnoremap <space>j :Lines <CR>
 nnoremap <space>k :BCommits <CR>
 nnoremap <space>b :tabe <CR>
 nnoremap <space>w :vsp <CR>
 nnoremap <space>i :split <CR>
-nnoremap <space>sy :set spell<cr>
-nnoremap <space>sn :set nospell<cr>
 nnoremap <silent> <space>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <space>* :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <space>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <space>_ :exe "resize " . (winwidth(0) * 2/3)<CR>
 ""------------------------------------------------------------                   
-"Git
-""------------------------------------------------------------                   
-nnoremap <space>gt :! git add * <CR> ! git commit -m "%" <CR> ! git push <CR>
-nnoremap <space>gb :Git Blame <CR>
-nnoremap <space>ga :Git add . <CR>
-nnoremap <space>gc :Git commit <CR>
-nnoremap <space>gp :Git push <CR>
-nnoremap <space>gl :GitGutterLineHighlightToggle <CR>
+nnoremap <space>G :! git add * <CR> ! git commit -m "%" <CR> ! git push <CR>
+nnoremap <leader>B :Git Blame <CR>
+nnoremap <leader>A :Git add . <CR>
+nnoremap <leader>ci :Git commit <CR>
+nnoremap <leader>pu :Git push <CR>
 nnoremap <leader>e :!cat % <CR>
-""------------------------------------------------------------                   
-"run
-noremap <space>rv :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./program <CR>
-""------------------------------------------------------------                   
 nnoremap <space>M :wa <CR> :! make <CR>
 nnoremap <space>n :wa <CR> :! make <CR>
 nnoremap <M-v> :! valgrind --leak-check=full --show-leak-kinds=all --log-file=Valgrind.txt ./%< <CR>
@@ -195,7 +152,7 @@ noremap <M-g> :wa <CR> :!javac % && java %< <CR>
 vmap <C-C> "+y                                                                                                         
 "------------------------------------------------------------                   
 inoremap " ""<left>
-" inoremap ' ''<left>
+inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left> 
 inoremap { {}<left>
@@ -203,55 +160,55 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 "airline_________________________________________________________________________________
-let g:airline_theme='violet'
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-                                                                                                             
+" let g:airline_theme='violet'                                               
+" let g:airline_powerline_fonts = 0
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+                                                                                                               
 " TABLINE:                                                          
 
 " let g:airline_section_a = airline#section#create([''])
 
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#enabled = 0           " enable airline tabline
-let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
-let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
-let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)
-let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
-let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right
-let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline
-let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline
-let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline
-let g:airline#extensions#tabline#show_tab_nr = 1       " disable tab numbers
-let g:airline#extensions#tabline#show_tab_type = 1     " disables the weird ornage arrow on the tabline
-let g:airline#extensions#hunks#enabled=0               " git
-let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#enabled = 0           " enable airline tabline                             
+" let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline                            
+" let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown) 
+" let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown) 
+" let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab                 
+" let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right         
+" let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline                           
+" let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline                      
+" let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline 
+" let g:airline#extensions#tabline#show_tab_nr = 1       " disable tab numbers                                                     
+" let g:airline#extensions#tabline#show_tab_type = 1     " disables the weird ornage arrow on the tabline                        
+" let g:airline#extensions#hunks#enabled=0               " git
+" let g:airline_powerline_fonts = 1
 " the separator used on the left side
-let g:airline_left_sep=''
-" the separator used on the right side
-let g:airline_right_sep=''
+" let g:airline_left_sep=''
+" the separator used on the right side 
+" let g:airline_right_sep=''
 
 " air-line
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+" if !exists('g:airline_symbols')
+    " let g:airline_symbols = {}
+" endif
 
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.dirty='⚡'
-set laststatus=2
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
+" let g:airline_symbols.dirty='⚡'
+" set laststatus=2
                                               
 "tmux   
 set background=dark   
@@ -281,7 +238,7 @@ nnoremap <space>m <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 nnoremap ; <cmd>lua require'telescope.builtin'.buffers{}<CR>
 
 " find in current buffer
-nnoremap <tab> <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <space>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
 
 " bookmarks
 nnoremap <space>' <cmd>lua require'telescope.builtin'.marks{}<CR>
@@ -329,40 +286,15 @@ let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 "Commets______________________________________________________________________________________
 " >> setup nerdcomment key bindings
-" Create default mappings
-let g:NERDCreateDefaultMappings = 1
-
-" Add spaces after comment delimiters by default
+let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-
-
-" xnoremap <Leader>cc <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
-" xnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
-" vnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
-" nnoremap <Leader>cc <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
-" nnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
-" vnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+xnoremap <Leader>cc <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+xnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+vnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+nnoremap <Leader>cc <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+nnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
+vnoremap <Leader>cu <cmd>call nerdcommenter#Comment('n', 'toggle')<CR>
 
 " >> Lsp key
 " bindings_____________________________________________________________________________________
@@ -392,13 +324,10 @@ nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 " nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 " nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 " nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
- " let g:compe.source.tabnine = v:true
 
 "Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-" let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-
-nnoremap <space>du :call vimspector#Launch()<CR>
+" nnoremap <space>du :call vimspector#Launch()<CR>
 nnoremap <F5> :call vimspector#Launch()<CR>
 nnoremap <space>dx :VimspectorReset<CR>
 nnoremap <space>de :VimspectorEval
@@ -460,10 +389,10 @@ nnoremap <space>tt :call Term_toggle(10)<cr>
 tnoremap <leader>tt <C-\><C-n>:call Term_toggle(10)<cr>
 
 noremap <space>m  :wa <CR> <C-\><C-n>:tabe term://make<CR>
-nnoremap <silent> <space>gg :wa <CR> :LazyGit<CR>
+nnoremap <silent> <space>g :wa <CR> :LazyGit<CR>
 noremap <silent> <space> :WhichKey '<Space>'<CR>
 noremap <silent> <leader> :WhichKey ','<CR>
-nnoremap <silent> <space>g :WhichKey 'g'<CR>
+" noremap <silent> g :WhichKey 'g'<CR>
 
 "markdown
 " should markdown preview get shown automatically upon opening markdown buffer
@@ -574,21 +503,7 @@ let g:mkdp_page_title = '「${name}」'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
-"
-" lua << EOF
-"     require'compe'.register_source('words', require'compe_words')
-"     require'compe'.setup {
-"       default_pattern = [[\d\@!\k\k\{-\}\>]],
-"       source = {
-"         path = true;
-"         buffer = { menu = '[B]'; priority = 51; }; -- slightly higher than snippets
-"         nvim_lsp = true;
-"         ultisnips = { menu = '[US]' };
-"         tags = { menu = '[T]' };
-"         words = true;
-"       };
-"     }
-" EOF
+
 
 lua <<EOF
 require("lsp")
@@ -596,40 +511,3 @@ require("treesitter")
 require("statusbar")
 require("completion")
 EOF
-
-" function! OpenCompletion()
-"     if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
-"         call feedkeys("\<C-x>\<C-o>", "n")
-"     endif
-" endfunction
-"
-" autocmd InsertCharPre * call OpenCompletion()
-"
-" set dictionary={~/.config/coc/extensions/node_modules/coc-word/10k.txt}
-"
-" function! Smart_TabComplete()
-"   let line = getline('.')                         " current line
-"
-"   let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-"                                                   " line to one character right
-"                                                   " of the cursor
-"   let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-"   if (strlen(substr)==0)                          " nothing to match on empty string
-"     return "\<tab>"
-"   endif
-"   let has_period = match(substr, '\.') != -1      " position of period, if any
-"   let has_slash = match(substr, '\/') != -1       " position of slash, if any
-"   if (!has_period && !has_slash)
-"     return "\<C-X>\<C-P>"                         " existing text matching
-"   elseif ( has_slash )
-"     return "\<C-X>\<C-F>"                         " file matching
-"   else
-"     return "\<C-X>\<C-O>"                         " plugin matching
-"   endif
-" endfunction
-"
-" set completeopt+=longest
-"
-" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-" let g:SuperTabDefaultCompletionType = "context"
-"
