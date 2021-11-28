@@ -79,9 +79,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-  plugins=(… zsh-completions)
-  autoload -U compinit && compinit
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -118,7 +115,6 @@ alias n=nvim
 alias m=make
 alias b=bash
 alias c=clear
-alias h=htop
 alias f="nautilus ."
 alias gt="gdb -tui"
 # alias cda="cd **"
@@ -128,27 +124,19 @@ alias zc="nvim ~/.zshrc"
 alias szc="source ~/.zshrc"
 alias v="nvim -S"
 alias p="nvim -p"
-alias nn="cd ~/.config/nvim/ && nvim init.vim"
+alias nn="nvim ~/.config/nvim/init.vim"
 alias i3="nvim ~/.config/i3/config"
 alias la="ls -lah"
 alias lh="ls -lh"
 alias e="cd .. && cd .. && cd run/media/"
 alias dot="cd ~/Varie/dotfiles"
-# alias t='tmux -2'
 alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
 alias cc="cp -r ~/Projects/Project_create/file_dot_c . && cd file_dot_c && n client.c"
 alias ccp="cp -r ~/Projects/Project_create/file_dot_cpp . && cd file_dot_cpp && n client.cpp"
 alias cy="cp -r ~/Projects/Project_create/file_dot_py . && cd file_dot_py && n client.py"
 alias cj="cp -r ~/Projects/Project_create/file_dot_java . && cd file_dot_java && n client.java"
-alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
-alias lab="cd Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
-alias pandocs="pandoc --pdf-engine=xelatex -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" --highlight-style zenburn -V colorlinks -V urlcolor=NavyBlue  --toc -N -o"
 
-bindkey 'C-j' 'Up'
-bindkey 'C-k' 'Down'
-bindkey 'C-h' 'Left'
-bindkey 'C-l' 'Right'
-
+# bindkey <C-z> <C-t>
 
 # t
 # clear
@@ -237,13 +225,10 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
-# export PATH="$HOME/.config/lvim:$PATH"
+export PATH="$HOME/.config/lvim:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# export PATH="$HOME/fra/.local/bin/lvim:$PATH"
-# export PATH=".local/bin/lvim:$PATH"
-#
-# export PATH="$PATH:$HOME/fra/.local/bin/lvim"
-# export PATH="$PATH:.local/bin/lvim"
+export PATH="/home/fra/.local/bin/lvim:$PATH"
+
