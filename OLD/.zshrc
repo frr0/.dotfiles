@@ -114,7 +114,7 @@ alias r=ranger
 alias t=tmux
 alias q=exit
 alias l=lazygit
-alias n=~/nvim.appimage
+alias n=nvim
 alias m=make
 alias b=bash
 alias c=clear
@@ -124,12 +124,12 @@ alias gt="gdb -tui"
 # alias cda="cd **"
 # alias na="n **"
 alias k="t kill-server"
-alias zc="n ~/.zshrc"
+alias zc="nvim ~/.zshrc"
 alias szc="source ~/.zshrc"
-alias v="n -S"
-alias p="n -p"
-alias nn="cd ~/.config/nvim/ && n init.vim"
-alias i3="n ~/.config/i3/config"
+alias v="nvim -S"
+alias p="nvim -p"
+alias nn="cd ~/.config/nvim/ && nvim init.vim"
+alias i3="nvim ~/.config/i3/config"
 alias la="ls -lah"
 alias lh="ls -lh"
 alias e="cd .. && cd .. && cd run/media/"
@@ -141,11 +141,8 @@ alias ccp="cp -r ~/Projects/Project_create/file_dot_cpp . && cd file_dot_cpp && 
 alias cy="cp -r ~/Projects/Project_create/file_dot_py . && cd file_dot_py && n client.py"
 alias cj="cp -r ~/Projects/Project_create/file_dot_java . && cd file_dot_java && n client.java"
 alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
-alias lab="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
+alias lab="cd Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
 alias pandocs="pandoc --pdf-engine=xelatex -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" --highlight-style zenburn -V colorlinks -V urlcolor=NavyBlue  --toc -N -o"
-alias apa="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/theory_ex/Algorithms_and_Data_Structure_Library"
-alias 19="cd ~/Projects/COVID-19"
-alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/schede-riepilogative/regioni/dpc-covid19-ita-scheda-regioni-latest.pdf"
 
 bindkey 'C-j' 'Up'
 bindkey 'C-k' 'Down'
@@ -195,6 +192,7 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -238,9 +236,14 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
-export PATH=$PATH:~/.local/bin/scripts
-# export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+# export PATH="$HOME/.config/lvim:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# export PATH="$HOME/fra/.local/bin/lvim:$PATH"
+# export PATH=".local/bin/lvim:$PATH"
+#
+# export PATH="$PATH:$HOME/fra/.local/bin/lvim"
+# export PATH="$PATH:.local/bin/lvim"
