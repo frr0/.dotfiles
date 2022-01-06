@@ -148,7 +148,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 #MIEI SHORTCUT
 bindsym $mod+t exec /home/fra/Scaricati/tsetup.2.2.0/Telegram/Telegram
-bindsym $mod+n exec files
+bindsym $mod+n exec nemo
 bindsym $mod+c exec firefox
 bindsym $mod+p exec evince
 
