@@ -12,7 +12,6 @@ My personal dotfiles.
 - Fzf
 - Ranger
 - Gcc
-- Java
 - zsh
 - ohmyzsh
 
