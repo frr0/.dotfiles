@@ -23,7 +23,7 @@ set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set autoindent
 set cursorline
 
-colorscheme darkplus
+colorscheme  onedark
 set t_Co=256
 set background=dark
 
@@ -75,6 +75,7 @@ nnoremap <space>i :split <cr>
 " yank
 
 nnoremap Y y$
+nnoremap <c-c> "+y
 nnoremap yt 0y$
 
 " man
