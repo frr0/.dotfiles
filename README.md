@@ -6,12 +6,10 @@ My personal dotfiles.
 
 - Python3
 - LazyGit
-- Node.js
-- Texlive
+- Pandoc
 - Pdftex
-- Fzf
 - Ranger
-- Gcc
+- gcc
 - zsh
 - ohmyzsh
 - kitty
