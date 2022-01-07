@@ -14,6 +14,7 @@ My personal dotfiles.
 - Gcc
 - zsh
 - ohmyzsh
+- kitty
 
 ## Install
 
