@@ -136,16 +136,17 @@ alias e="cd .. && cd .. && cd run/media/"
 alias dot="cd ~/Varie/dotfiles"
 # alias t='tmux -2'
 alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
-alias cc="cp -r ~/Projects/Project_create/file_dot_c . && cd file_dot_c && n client.c"
-alias ccp="cp -r ~/Projects/Project_create/file_dot_cpp . && cd file_dot_cpp && n client.cpp"
-alias cy="cp -r ~/Projects/Project_create/file_dot_py . && cd file_dot_py && n client.py"
-alias cj="cp -r ~/Projects/Project_create/file_dot_java . && cd file_dot_java && n client.java"
+alias cc="cp -r ~/Projects/Project_create/c . && cd c && n client.c"
+alias ccp="cp -r ~/Projects/Project_create/cpp . && cd cpp && n client.cpp"
+alias cy="cp -r ~/Projects/Project_create/py . && cd py && n client.py"
+alias cj="cp -r ~/Projects/Project_create/java . && cd java && n client.java"
 alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
 alias lab="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
 alias pandocs="pandoc --pdf-engine=xelatex -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" --highlight-style zenburn -V colorlinks -V urlcolor=NavyBlue  --toc -N -o"
 alias apa="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/theory_ex/Algorithms_and_Data_Structure_Library"
 alias 19="cd ~/Projects/COVID-19"
 alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/schede-riepilogative/regioni/dpc-covid19-ita-scheda-regioni-latest.pdf"
+alias sc="cd ~/.local/bin/scripts"
 
 bindkey 'C-j' 'Up'
 bindkey 'C-k' 'Down'
