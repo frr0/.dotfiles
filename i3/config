@@ -257,4 +257,4 @@ for_window [class="chromium-browser"] floating enable
 
 hide_edge_borders vertical
 
-set $i3lockwall i3lock -i ~/Immagini/Space-HD.jpg -t
+set $i3lockwall i3lock -i ~/Scaricati/aaaaa.png -t
