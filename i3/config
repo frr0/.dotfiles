@@ -263,4 +263,5 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bindsym $mod+ctrl+s exec notify-send "i3-bind" "$(cat ~/.config/i3/conf | sed 's/bindsym //' | rofi -i -dmenu -p "Shortcuts")"
 #bindsym $mod+d exec --no-startup-id rofi -show drun -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 #bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme t
+#bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme t
+bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme s
