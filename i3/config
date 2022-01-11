@@ -219,26 +219,26 @@ exec_always feh --bg-scale /home/fra/Varie/wall_secondary.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar 
-{
-	position top
-        status_command i3status --config ~/.i3
-colors {
+#bar 
+#{
+	#position top
+        #status_command i3status --config ~/.i3
+#colors {
 
-        background 	 #252626
-        statusline 	#FAE7B5
-        separator #666666
+        #background 	 #252626
+        #statusline 	#FAE7B5
+        #separator #666666
 
-        focused_workspace   #252626 #FAE7B5 #252626
-        active_workspace   #252626 #252626 	#FAE7B5 
-        inactive_workspace  #252626 #252626 #FAE7B5
-        urgent_workspace    #252626 #ffffff #000000 
-        binding_mode        #252626 #ffffff #000000 
+        #focused_workspace   #252626 #FAE7B5 #252626
+        #active_workspace   #252626 #252626 	#FAE7B5 
+        #inactive_workspace  #252626 #252626 #FAE7B5
+        #urgent_workspace    #252626 #ffffff #000000 
+        #binding_mode        #252626 #ffffff #000000 
 
-    }
-	font pango: Skia Condensed 8
+    #}
+	#font pango: Skia Condensed 8
 
-}
+#}
 
 
 for_window [class="^.*"] border pixel 1
@@ -258,3 +258,5 @@ for_window [class="chromium-browser"] floating enable
 hide_edge_borders vertical
 
 set $i3lockwall i3lock -i ~/Scaricati/aaaaa.png -t
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
