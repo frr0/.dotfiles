@@ -67,6 +67,8 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+;font-0 = NotoSansMono-Regular.ttf: Noto Sans Mono:style=Regular
+
 
 modules-left = bspwm i3
 modules-center = mpd
@@ -370,6 +372,20 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+[module/audio]
+type = internal/pulseaudio
+
+; Volume label
+label-volume            = 
+label-volume-foreground = ${colors.cyan}
+label-volume-padding    = 2
+
+; Muted label
+label-muted            = 
+label-muted-foreground = ${colors.red}
+label-muted-padding    = 2
+
+
 ;[module/alsa]
 ;type = internal/alsa
 
@@ -434,11 +450,17 @@ animation-discharging-framerate = 750
 label-charging = cha %percentage%%
 label-full = full %percentage%%
 label-discharging = bat %percentage%%
+label-warn-foreground = ${colors.secondary}
+
+;label-discharging            = "%percentage%%"
+;label-discharging-background = ${xrdb:color7}
+;label-discharging-foreground = ${xrdb:color0}
+;label-discharging-padding    = 4
 
 ;[module/battery]
 ;type          = internal/battery
 ;full-at       = 98
-;battery       = BAT0
+;battery       = BAT1
 ;adapter       = AC0
 ;poll-interval = 5
 
