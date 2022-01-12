@@ -426,6 +426,10 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
+warn-battery = 90
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
@@ -450,7 +454,9 @@ animation-discharging-framerate = 750
 label-charging = cha %percentage%%
 label-full = full %percentage%%
 label-discharging = bat %percentage%%
+label-warn = ! %percentage%%
 label-warn-foreground = ${colors.secondary}
+ramp-foreground = ${colors.foreground-alt}
 
 ;label-discharging            = "%percentage%%"
 ;label-discharging-background = ${xrdb:color7}
@@ -512,11 +518,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.red}
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.red}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.red}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -540,48 +546,48 @@ menu-2-1-exec = menu-open-0
 ;; Interface
 ;interface = wlp3s0
 
-;; Connected label
-;label-connected            = 
+;; Connected label
+;label-connected            = w
 ;label-connected-foreground = ${colors.green}
-;label-connected-padding    = 2
+;label-connected-padding    = 0
 
-;; Disconnected label
-;label-disconnected            = 
+;; Disconnected label
+;label-disconnected            = X
 ;label-disconnected-foreground = ${colors.red}
-;label-disconnected-padding    = 2
+;label-disconnected-padding    = 0
 
-;[module/lock]
-;type = custom/text
+[module/lock]
+type = custom/text
 
-;; Label
-;content            = 
-;content-foreground = ${colors.green}
-;content-padding    = 2
+; Label
+content            = ██
+content-foreground = ${colors.foreground}
+content-padding    = 0
 
-;; Mouse click
-;click-left = i3lock-fancy -f Roboto-Regular -t ""
+; Mouse click
+click-left = i3lock-fancy -f Roboto-Regular -t ""
 
-;[module/logout]
-;type = custom/text
+[module/logout]
+type = custom/text
 
-;; Label
-;content            = 
-;content-foreground = ${colors.foreground}
-;content-padding    = 2
+; Label
+content            = ██
+content-foreground = ${colors.yellow}
+content-padding    = 0
 
-;; Mouse click
-;click-left = i3-msg exit
+; Mouse click
+click-left = i3-msg exit
 
-;[module/poweroff]
-;type = custom/text
+[module/poweroff]
+type = custom/text
 
-;; Label
-;content            = 
-;content-foreground = ${colors.red}
-;content-padding    = 2
+; Label
+content            = ██
+content-foreground = ${colors.red}
+content-padding    = 0
 
-;; Mouse click
-;click-left = poweroff
+; Mouse click
+click-left = poweroff
 
 [settings]
 screenchange-reload = true
