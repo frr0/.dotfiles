@@ -2,18 +2,6 @@
 
 My personal dotfiles.
 
-## Programs to download
-
-- Python3
-- LazyGit
-- Pandoc
-- Pdftex
-- Ranger
-- gcc
-- zsh
-- ohmyzsh
-- kitty
-
 ## Install
 
 ```
