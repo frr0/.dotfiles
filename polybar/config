@@ -374,18 +374,18 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/audio]
-type = internal/pulseaudio
+;[module/audio]
+;type = internal/pulseaudio
 
-; Volume label
-label-volume            = 
-label-volume-foreground = ${colors.cyan}
-label-volume-padding    = 2
+;; Volume label
+;label-volume            = 
+;label-volume-foreground = ${colors.cyan}
+;label-volume-padding    = 2
 
-; Muted label
-label-muted            = 
-label-muted-foreground = ${colors.red}
-label-muted-padding    = 2
+;; Muted label
+;label-muted            = 
+;label-muted-foreground = ${colors.red}
+;label-muted-padding    = 2
 
 
 ;[module/alsa]
