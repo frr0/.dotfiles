@@ -49,36 +49,38 @@ mv .vimrc .vimrc_OLD && mv ~/.dotfiles/vim/.vimrc ~/.vimrc && ln .vimrc ~/.dotfi
 
 #.config
 
-cd ~/.config/i3/
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+#!! To be done !!
 
-cd ~/.config/kitty/
-mv kitty.conf kitty.conf_OLD && mv ~/.dotfiles/kitty/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/kitty/
+#cd ~/.config/i3/
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-cd ~/.config/Codium/
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+#cd ~/.config/kitty/
+#mv kitty.conf kitty.conf_OLD && mv ~/.dotfiles/kitty/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/kitty/
 
-# required for vscodium nvim plugin
+#cd ~/.config/Codium/
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-cd ~
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+## required for vscodium nvim plugin
 
-cd ~/.config/polybar/
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+#cd ~
+#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-cd ~/.config/rofi/
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+#cd ~/.config/polybar/
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-cd ~/.config/ranger/
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+#cd ~/.config/rofi/
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-#Projects
+#cd ~/.config/ranger/
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-cd ~/Projects/Project_create
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+##Projects
 
-#Scripts
+#cd ~/Projects/Project_create
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
 
-cd .local/bin/scripts
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+##Scripts
+
+#cd .local/bin/scripts
+#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
