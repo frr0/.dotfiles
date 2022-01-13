@@ -6,6 +6,11 @@ sleep 2
 echo "Do you want to install all the programs? [y][n]"
 read a
 
+#echo "Which OS/Distro are you on?"
+#echo "[1] = Fedora"
+#echo "[n/a] = to be implemented..."
+#read d
+
 echo "Do you want to replace your nvim config? [y][n]"
 read b
 
