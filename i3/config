@@ -159,9 +159,10 @@ bindsym $mod+z exec codium
 #bindsym $mod+s exec gnome-software
 bindsym $mod+è exec Ranger
 bindsym $mod+à exec Neovim
-bindsym $mod+i exec settings
+bindsym $mod+i exec systemsettings5
 bindsym $mod+b exec gestore-bluetooth
 bindsym $mod+x exec xournalpp 
+bindsym $mod+Shift+a exec spectacle 
 #bindsym $mod+o exec Politecnico di Torino 
 bindsym $mod+Shift+s schermata
 
@@ -261,3 +262,17 @@ set $i3lockwall i3lock -i ~/Scaricati/aaaaa.png -t
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme s
+
+## startup
+
+#exec Dropbox
+#exec_always ~/.local/bin/monitor
+
+#workspace 1 output DP-1
+#workspace 2 output HDMI-1
+#workspace 3 output HDMI-1
+#workspace 4 output HDMI-1
+#workspace 5 output HDMI-1
+
+#assign [class="kitty"] 2
+#assign [class="Telegram"] 3
