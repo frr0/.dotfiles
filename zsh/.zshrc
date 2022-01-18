@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+export EDITOR=~/nvim.appimage
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -150,7 +151,7 @@ alias ne="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Computer_
 alias 19="cd ~/Projects/COVID-19"
 alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/schede-riepilogative/regioni/dpc-covid19-ita-scheda-regioni-latest.pdf"
 alias sc="cd ~/.local/bin/scripts;la"
-alias pr="cd ~/Projects;la"
+#alias pr="cd ~/Projects;la"
 
 bindkey 'C-j' 'Up'
 bindkey 'C-k' 'Down'
