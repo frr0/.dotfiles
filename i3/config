@@ -259,6 +259,7 @@ for_window [class="chromium-browser"] floating enable
 hide_edge_borders vertical
 
 set $i3lockwall i3lock -i ~/Scaricati/aaaaa.png -t
+exec_always ~/.local/bin/scripts/battery
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme s
