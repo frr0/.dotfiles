@@ -8,11 +8,11 @@ f_pdf=$name.pdf
 #echo $f_csv
 #echo $f_pdf
 
-pandoc \
+pandoc -s -i -N \
     --pdf-engine=xelatex \
     -V geometry:"top=2cm, bottom=2cm, left=2cm, right=2cm" \
     -V colorlinks \
     --highlight-style zenburn \
     -V urlcolor=NavyBlue \
-    --toc -N -f markdown-raw_tex \
+    --toc \
     -o $f_pdf $f_md +RTS -Ksize -RTS
