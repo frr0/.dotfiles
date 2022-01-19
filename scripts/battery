@@ -7,7 +7,7 @@ while [[ i -eq 0 ]]; do
   b=$(acpi | cut -d ' ' -f 4 | tr -d % | tr -d ,)
   echo $b
 
-  if [[ $b -eq 100 ]]; then
+  if [[ $b -eq 99 ]]; then
     herbe "Battery 100%" &
   fi
   #if [[ $b -lt 100 ]]; then
