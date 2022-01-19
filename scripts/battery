@@ -10,13 +10,16 @@ while [[ i -eq 0 ]]; do
   if [[ $b -eq 100 ]]; then
     herbe "Battery 100%" &
   fi
-  if [[ $b < 21 ]]; then
+  if [[ $b -lt 100 ]]; then
+    herbe "Battery $b%" &
+  fi
+  if [[ $b -lt 21 ]]; then
     herbe "Battery 20%" &
   fi
-  if [[ $b < 11 ]]; then
+  if [[ $b -lt 11 ]]; then
     herbe "Battery 10%" &
   fi
-  if [[ $b < 6 ]]; then
+  if [[ $b -lt 6 ]]; then
     herbe "Battery 5%" &
   fi
 
