@@ -53,9 +53,9 @@ bindsym $mod+Shift+d exec dmenu_run                                             
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+Shift+p exec poweroff 
-bindsym $mod+Shift+o exec reboot
-bindsym $mod+Shift+i exec i3lock
+#bindsym $mod+Shift+p exec poweroff 
+#bindsym $mod+Shift+o exec reboot
+#bindsym $mod+Shift+i exec i3lock
 
 
 # change focus
@@ -263,6 +263,7 @@ exec_always ~/.local/bin/scripts/battery
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/t.rasi -theme s
+bindsym $mod+Shift+p exec ~/.local/bin/scripts/poffrofi
 
 ## startup
 
