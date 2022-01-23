@@ -74,7 +74,7 @@ modules-left = bspwm i3
 modules-center =  
 ;modules-center = mpd date 
 ;modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date powermenu network lock logout poweroff
-modules-right = pulseaudio memory cpu battery date logout poweroff
+modules-right = pulseaudio memory cpu battery date
 
 tray-position = right
 tray-padding = 2
