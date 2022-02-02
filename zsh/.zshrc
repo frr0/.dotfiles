@@ -138,6 +138,7 @@ alias dot="cd ~/.dotfiles"
 # alias t='tmux -2'
 alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
 alias cc="cp -r ~/Projects/Project_create/c . && cd c && n client.c"
+alias ccc="cp -r ~/Projects/Project_create/c_adv . && cd c_adv && n client.c"
 alias ccp="cp -r ~/Projects/Project_create/cpp . && cd cpp && n client.cpp"
 alias cy="cp -r ~/Projects/Project_create/py . && cd py && n client.py"
 alias cj="cp -r ~/Projects/Project_create/java . && cd java && n client.java"
