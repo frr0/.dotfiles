@@ -150,10 +150,11 @@ alias apa="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/the
 alias os="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Operating_Systems"
 alias oo="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/OOP/Object-oriented_Programming/Workspace"
 alias ne="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Computer_Networks/Computer_Networks"
+alias td="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/ToDo && n note.md"
 alias 19="cd ~/Projects/COVID-19"
 alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/schede-riepilogative/regioni/dpc-covid19-ita-scheda-regioni-latest.pdf"
 alias sc="cd ~/.local/bin/scripts;la"
-#alias pr="cd ~/Projects;la"
+# alias pr="cd ~/Projects;la"
 
 bindkey 'C-j' 'Up'
 bindkey 'C-k' 'Down'
