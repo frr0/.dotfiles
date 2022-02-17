@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set fish_greeting
+
 alias r=ranger
 alias t=tmux
 alias q=exit
@@ -27,6 +29,7 @@ alias lh="ls -lh"
 alias e="cd .. && cd .. && cd run/media/"
 alias dot="cd ~/.dotfiles"
 # alias t='tmux -2'
+
 alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
 alias cc="cp -r ~/Projects/Project_create/c . && cd c && n client.c"
 alias ccc="cp -r ~/Projects/Project_create/c_adv . && cd c_adv && n client.c"
@@ -36,7 +39,7 @@ alias cj="cp -r ~/Projects/Project_create/java . && cd java && n client.java"
 alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
 alias cm="cp -r ~/Projects/Project_create/md . && cd md && n note.md"
 alias lab="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
-alias pandocs="pandoc --pdf-engine=xelatex -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" --highlight-style zenburn -V colorlinks -V urlcolor=NavyBlue  --toc -N -o"
+#alias pandocs="pandoc --pdf-engine=xelatex -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" --highlight-style zenburn -V colorlinks -V urlcolor=NavyBlue  --toc -N -o"
 alias apa="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/theory_ex/Algorithms_and_Data_Structure_Library"
 alias os="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Operating_Systems"
 alias oo="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/OOP/Object-oriented_Programming/Workspace"
@@ -108,8 +111,8 @@ function fish_prompt
   set -l current_user (whoami)
 
   # Line 1
-  echo -n $white'╭─'$green$current_user$white' at '$blue$__fish_prompt_hostname$white' in '$yellow(pwd|sed "s=$HOME=⌁=")$turquoise
-  __fish_git_prompt " (%s)"
+  echo -n $white'╭─'$green$current_user$white' at '$blue$__fish_prompt_hostname$white' in '$yellow(pwd|sed "s=$HOME=~=")$turquoise
+  __fish_git_prompt " (%s)" 
   echo
 
   # Line 2
@@ -121,3 +124,58 @@ function fish_prompt
   echo -n $white'─'$__fish_prompt_char $normal
 end
 
+
+  function fish_right_prompt 
+	set -l exit_code $status
+  __tmux_prompt
+  if test $exit_code -ne 0
+    set_color -o red
+  else
+    set_color 666666
+  end
+  printf '%d' $exit_code
+  set_color 666666
+  printf ' [%s]' (date +%H:%M:%S)
+  set_color normal
+end
+
+function __tmux_prompt
+  set multiplexer (_is_multiplexed)
+
+  switch $multiplexer
+    case screen
+      set pane (_get_screen_window)
+    case tmux
+      set pane (_get_tmux_window)
+   end
+
+  set_color 666666
+  if test -z $pane
+    echo -n ""
+  else
+    echo -n $pane' | '
+  end
+end
+
+function _get_tmux_window
+  tmux lsw | grep active | sed 's/\*.*$//g;s/: / /1' | awk '{ print $2 "-" $1 }' -
+end
+
+function _get_screen_window
+  set initial (screen -Q windows; screen -Q echo "")
+  set middle (echo $initial | sed 's/  /\n/g' | grep '\*' | sed 's/\*\$ / /g')
+  echo $middle | awk '{ print $2 "-" $1 }' -
+end
+
+function _is_multiplexed
+  set multiplexer ""
+  if test -z $TMUX
+  else
+    set multiplexer "tmux"
+  end
+  if test -z $WINDOW
+  else
+    set multiplexer "screen"
+  end
+  echo $multiplexer
+end

@@ -75,7 +75,7 @@ export ZSH="/home/fra/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -180,12 +180,12 @@ bindkey 'C-l' 'Right'
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 
-HYPHEN_INSENSITIVE="true"
+#HYPHEN_INSENSITIVE="true"
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
+#autoload -Uz vcs_info
+#precmd() { vcs_info }
 
- setopt prompt_subst
+ #setopt prompt_subst
 # PROMPT='${vcs_info_msg_0_}%# '
 
 # PROMPT='%(?.%F{green}√-FRA.%F{red}?%?)%f %B%F{240}%1~%f%b > '
@@ -195,18 +195,18 @@ precmd() { vcs_info }
 
 # zstyle ':vcs_info:git*' actionformats "%s  %r/%S %b %m%u%c "
 
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
+#SAVEHIST=1000
+#HISTFILE=~/.zsh_history
 
-#Load Git completion
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-fpath=(~/.zsh $fpath)
+##Load Git completion
+#zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+#fpath=(~/.zsh $fpath)
 
-autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit
 
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # alias man=vman
 
@@ -223,12 +223,12 @@ autoload -Uz compinit && compinit
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 
-HYPHEN_INSENSITIVE="true"
+#HYPHEN_INSENSITIVE="true"
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
+#autoload -Uz vcs_info
+#precmd() { vcs_info }
 
- setopt prompt_subst
+ #setopt prompt_subst
 # PROMPT='${vcs_info_msg_0_}%# '
 
 # PROMPT='%(?.%F{green}√-FRA.%F{red}?%?)%f %B%F{240}%1~%f%b > '
@@ -245,9 +245,9 @@ HISTFILE=~/.zsh_history
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
-autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit
 
-export PATH=$PATH:~/.local/bin/scripts
+#export PATH=$PATH:~/.local/bin/scripts
 # export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 
@@ -290,3 +290,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[202]%}✘✘✘"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[040]%}✔"
 ZSH_THEME_RUBY_PROMPT_PREFIX=" %{$FG[239]%}using%{$FG[243]%} ‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
+
+
