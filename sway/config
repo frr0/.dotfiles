@@ -29,7 +29,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg  /home/fra/Varie/wall_secondary.png fill
+#output * bg  /home/fra/Varie/wall_secondary.png fill
+output * bg  /home/fra/Immagini/bbb.jpg fill
 #
 # Example configuration:
 #
@@ -279,7 +280,7 @@ client.unfocused        #252626 #252626 #6c6c6c #252626
 client.urgent           #252626 #252626 #dfdfdf #252626
 
  smart_borders on
- smart_borders no_gaps
+ #smart_borders no_gaps
  #border_radius2
 
 hide_edge_borders vertical
@@ -290,6 +291,8 @@ exec_always ~/.local/bin/scripts/battery
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 
+exec_always ~/.local/bin/scripts/dropbox
+
 #bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/s.rasi -theme s &
 #bindsym $mod+Shift+d rofi -show drun ~/.config/rofi/t.rasi -theme s
 bindsym $mod+d exec ~/.local/bin/scripts/drunrofi.sh
@@ -297,10 +300,11 @@ bindsym $mod+Shift+p exec ~/.local/bin/scripts/poffrofi
 bindsym $mod+Up exec amixer -q sset Master 3%+
 bindsym $mod+Down exec amixer -q sset Master 3%-
 
-exec Dropbox
-
 #assign [class="kitty"] 2
 #assign [class="Telegram"] 3
+
+for_window [class="kitty"] floating enable
+#for_window [class="Kitty"] floating enable
 
 #
 # Status Bar:
