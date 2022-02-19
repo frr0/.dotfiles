@@ -303,7 +303,7 @@ bindsym $mod+Down exec amixer -q sset Master 3%-
 #assign [class="kitty"] 2
 #assign [class="Telegram"] 3
 
-for_window [class="kitty"] floating enable
+#for_window [class="kitty"] floating enable
 #for_window [class="Kitty"] floating enable
 
 #
