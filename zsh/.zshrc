@@ -89,7 +89,8 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR=~/nvim.appimage
+export EDITOR=nvim
+#export EDITOR=~/nvim.appimage
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -115,7 +116,8 @@ alias r=ranger
 alias t=tmux
 alias q=exit
 alias l=lazygit
-alias n=~/nvim.appimage
+alias n=nvim
+#alias n=~/nvim.appimage
 alias m=make
 alias b=bash
 alias c=clear

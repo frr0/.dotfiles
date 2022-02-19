@@ -29,9 +29,12 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: #c9545d;
-    border-top: 2px solid #c9545d;
-    background: #262626;
+    color: #FFA500;
+    /*color: black;*/
+    /*border-top: 2px solid black;*/
+    border-top: 2px solid #FFA500;
+    /*background: #262626;*/
+    /*background: #a39e88;*/
 }
 
 #mode {
