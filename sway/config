@@ -110,10 +110,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -294,6 +294,8 @@ exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 #bindsym $mod+Shift+d rofi -show drun ~/.config/rofi/t.rasi -theme s
 bindsym $mod+d exec ~/.local/bin/scripts/drunrofi.sh
 bindsym $mod+Shift+p exec ~/.local/bin/scripts/poffrofi
+bindsym $mod+Up exec amixer -q sset Master 3%+
+bindsym $mod+Down exec amixer -q sset Master 3%-
 
 exec Dropbox
 
