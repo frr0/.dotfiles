@@ -4,6 +4,9 @@ end
 
 set fish_greeting
 
+export VISUAL="~/nvim.appimage"
+export EDITOR="~/nvim.appimage"
+
 alias r=ranger
 alias t=tmux
 alias q=exit
