@@ -1,1 +1,13 @@
-xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1
+#!/bin/sh
+
+
+testVar=$(wlr-randr)
+
+count=$(wc -l $testVar|cut -d ' ' -f 2)
+echo '$count'
+
+#if [[ $count > 10 ]]; then
+  #wlr-randr --output eDP-1 --off
+#fi
+
+exit 0
