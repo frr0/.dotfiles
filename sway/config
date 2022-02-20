@@ -285,6 +285,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
+#font pango:DejaVu Sans Mono 6
+#for_window [class=".*"] title_format "<span font='Tewi 8'> </span>"
+#for_window [class="^.*"] border normal 1
+
 #COLORS
 #1B1811 #1B1811 #c0c0c0 #1B1811         
 # Colors #3B3C36 #3B3C36 #c0c0c0 #3B3C36
