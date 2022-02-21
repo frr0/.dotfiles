@@ -9,7 +9,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "network", "battery", "temperature", "battery#bat2", "clock", "tray"],
     /*"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],*/
 
 
@@ -124,12 +124,14 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-wifi": " ",
+        /*"format-wifi": "{essid} ({signalStrength}%)  ",*/
         "format-ethernet": "{ipaddr}/{cidr}  ",
         "tooltip-format": "{ifname} via {gwaddr}  ",
         "format-linked": "{ifname} (No IP)  ",
-        "format-disconnected": "Disconnected ⚠ ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "   ",
+        /*"format-disconnected": "Disconnected ⚠ ",*/
+        "format-alt": "{ifname}: {ipaddr}/{cidr} {essid} ({signalStrength}%)"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

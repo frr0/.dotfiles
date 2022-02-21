@@ -1,6 +1,5 @@
 {
   "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/vimscript/nvim-vscodium/init.vim",
@@ -24,7 +23,7 @@
       "command": "workbench.action.showCommands"
     },
     {
-      "key": "/",
+      "key": "c",
       "name": "comment",
       "type": "command",
       "command": "vscode-neovim.send",
@@ -132,7 +131,7 @@
           "command": "workbench.action.debug.start"
         },
         {
-          "key": "S",
+          "key": "x",
           "name": "Stop debug",
           "type": "command",
           "command": "workbench.action.debug.stop"
@@ -411,13 +410,13 @@
       ]
     },
     {
-      "key": "h",
+      "key": "i",
       "name": "Split Horizontal",
       "type": "command",
       "command": "workbench.action.splitEditorDown"
     },
     {
-      "key": "i",
+      "key": "I",
       "name": "Insert...",
       "type": "bindings",
       "bindings": [
@@ -576,7 +575,7 @@
       ]
     },
     {
-      "key": "m",
+      "key": "n",
       "name": "Mark...",
       "type": "bindings",
       "bindings": [
@@ -635,7 +634,7 @@
       "command": "editor.action.toggleMinimap"
     },
     {
-      "key": "n",
+      "key": "N",
       "name": "No Highlight",
       "type": "command",
       "command": "vscode-neovim.send",
@@ -713,7 +712,7 @@
       ]
     },
     {
-      "key": "s",
+      "key": "a",
       "name": "Search...",
       "type": "bindings",
       "bindings": [
@@ -732,7 +731,7 @@
       ]
     },
     {
-      "key": "S",
+      "key": "r",
       "name": "Show...",
       "type": "bindings",
       "bindings": [
@@ -862,13 +861,13 @@
       ]
     },
     {
-      "key": "v",
+      "key": "w",
       "name": "Split Vertical",
       "type": "command",
       "command": "workbench.action.splitEditor"
     },
     {
-      "key": "w",
+      "key": "v",
       "name": "Window...",
       "type": "bindings",
       "bindings": [
@@ -976,6 +975,36 @@
       "name": "Toggle zen mode",
       "type": "command",
       "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "0",
+          "name": "Close active editor",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+    },
+    {
+      "key": "s",
+          "name": "Save",
+          "type": "command",
+          "command": "workbench.action.files.save"
+    },
+    {
+      "key": "j",
+      "name": "grep",
+      "type": "command",
+      "command": "workbench.action.replaceInFiles"
+    },
+    {
+      "key": "m",
+      "name": "run",
+      "type": "command",
+      "command": "workbench.action.debug.start"
+    },
+    {
+      "key": "h",
+          "name": "files",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
     }
   ],
 
@@ -1068,7 +1097,6 @@
       "*.pdf": "default"
     },
     "java.home": "/usr/lib/jvm/java",
-    "workbench.colorTheme": "One Dark Pro Flat",
     "window.zoomLevel": -1,
     "java.configuration.runtimes": [
       {
@@ -1076,6 +1104,9 @@
         "path": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-2.fc35.x86_64",
         "default": true
       }
-    ]
+    ],
+    "editor.minimap.enabled": false,
+    "debug.onTaskErrors": "debugAnyway",
+    "workbench.activityBar.visible": false
 
 }
