@@ -7,24 +7,24 @@
     // Choose the order of the modules
 
 
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "network", "backlight", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "network", "backlight", "battery", "battery#bat2", "tray", "clock", "custom/power"],
     /*"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],*/
 
-
     // Modules configuration
+    /*https://fontawesome.com/v5/cheatsheet*/
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{name}: {icon}",
          "format-icons": {
-             "1": " ",
+             "1": " ",
              "2": " ",
              "4": " ",
              /*"2": " ",*/
-             "3": " ",
-             "5": " ",
+             "3": " ",
+             "5": " ",
              /*"5": " ",*/
              "urgent": " ",
              "focused": " ",
@@ -103,7 +103,8 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": [" ", " "]
+        "format-icons": [" "]
+        /*"format-icons": [" ", " "]*/
     },
     "battery": {
         "states": {
@@ -126,9 +127,9 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " ",
         /*"format-wifi": "{essid} ({signalStrength}%)  ",*/
-        "format-ethernet": "☎ ",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
-        "format-linked": "{ifname} (No IP)  ",
+        "format-ethernet": " ",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-linked": "{ifname} (No IP)  ",
         "format-disconnected": "   ",
         /*"format-disconnected": "Disconnected ⚠ ",*/
         "format-alt": "{ifname}: {ipaddr}/{cidr} {essid} ({signalStrength}%)"
@@ -152,6 +153,23 @@
         },
         "on-click": "pavucontrol"
     },
+    /*"apps": {*/
+        /*"format": " ", //   */
+        /*"on-click": "zsh ~/.local/bin/scripts/drunrofi.sh"*/
+    /*},*/
+    /*"exit": {*/
+        /*"format": " ",*/
+        /*"on-click": "zsh ~/.local/bin/scripts/poffrofi"*/
+    /*},*/
+        "custom/launcher":{
+        "format": "  ",
+        "on-click": "wofi --show drun",
+        "on-click-right": "killall wofi"
+    },
+      "custom/power": {
+    "format": "  ",
+    "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+  },
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
