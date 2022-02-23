@@ -1121,7 +1121,8 @@
     "debug.onTaskErrors": "debugAnyway",
     "editor.tabSize": 2,
     "editor.cursorBlinking": "solid",
+    "git.autofetch": true,
     "workbench.activityBar.visible": false,
-    "git.autofetch": true
+    "explorer.confirmDragAndDrop": false
 
 }
