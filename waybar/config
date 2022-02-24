@@ -103,8 +103,10 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": [" "]
+        "format-icons": [" "],
         /*"format-icons": [" ", " "]*/
+        "on-click": "systemsettings5"
+        /*"on-click": "bash ~/.local/bin/scripts/audioset.sh"*/
     },
     "battery": {
         "states": {
@@ -154,8 +156,8 @@
             "car": " ",
             "default": [" ", " ", " "]
         },
-        "on-click": "bash ~/.local/bin/scripts/audioset.sh"
-        /*"on-click": "pavucontrol"*/
+        /*"on-click": "bash ~/.local/bin/scripts/audioset.sh"*/
+        "on-click": "pavucontrol"
     },
     /*"apps": {*/
         /*"format": " ", //   */
