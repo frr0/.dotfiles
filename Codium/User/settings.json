@@ -1123,7 +1123,6 @@
     "editor.cursorBlinking": "solid",
     "git.autofetch": true,
     "workbench.activityBar.visible": false,
-    "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Default Light+"
+    "explorer.confirmDragAndDrop": false
 
 }
