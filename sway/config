@@ -316,7 +316,8 @@ exec_always ~/.local/bin/scripts/dropbox
 
 #bindsym $mod+d --release exec sleep 0 && rofi -show drun ~/.config/rofi/s.rasi -theme s &
 #bindsym $mod+Shift+d rofi -show drun ~/.config/rofi/t.rasi -theme s
-bindsym $mod+d exec ~/.local/bin/scripts/drunrofi.sh
+#bindsym $mod+d exec ~/.local/bin/scripts/drunrofi.sh
+bindsym $mod+d exec wofi --show drun
 bindsym $mod+Shift+p exec ~/.local/bin/scripts/poffrofi
 #bindsym $mod+Up exec amixer -q sset Master 3%+
 #bindsym $mod+Down exec amixer -q sset Master 3%-
