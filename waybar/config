@@ -163,7 +163,8 @@
     /*},*/
         "custom/launcher":{
         "format": "    ",
-        "on-click": "wofi --show drun -b",
+        "on-click": "wofi --show drun -W 800 -H 500 -b",
+        /*"on-click": "wofi --show drun -b",*/
         "on-click-right": "killall wofi"
     },
       "custom/power": {
