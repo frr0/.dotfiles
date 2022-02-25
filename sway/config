@@ -218,7 +218,7 @@ bindsym $mod+Shift+Right move right
     bindsym $mod+a focus parent
 
 #MIEI SHORTCUT
-bindsym $mod+t exec /home/fra/Scaricati/tsetup.2.2.0/Telegram/Telegram
+bindsym $mod+t exec telegram-desktop
 bindsym $mod+n exec nemo
 bindsym $mod+c exec firefox
 bindsym $mod+p exec evince
@@ -232,9 +232,9 @@ bindsym $mod+z exec codium
 bindsym $mod+i exec systemsettings5
 #bindsym $mod+b exec gestore-bluetooth
 bindsym $mod+x exec xournalpp 
-bindsym $mod+Shift+a exec spectacle 
+#bindsym $mod+Shift+a exec spectacle 
 #bindsym $mod+o exec Politecnico di Torino 
-bindsym $mod+Shift+s schermata
+#bindsym $mod+Shift+s schermata
 
 
 #
@@ -331,6 +331,16 @@ bindsym $mod+d exec wofi --show drun -W 800 -H 500 -b
 bindsym $mod+Shift+p exec ~/.local/bin/scripts/poffrofi
 #bindsym $mod+Up exec amixer -q sset Master 3%+
 #bindsym $mod+Down exec amixer -q sset Master 3%-
+
+# capture all screens to clipboard    
+bindsym $mod+Shift+S exec grim - | wl-copy    
+    
+# capture the specified screen area to clipboard    
+bindsym $mod+Alt+S exec grim -g "$(slurp)" - | wl-copy    
+    
+# capture the focused monitor to clipboard    
+bindsym $mod+Control+S exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
