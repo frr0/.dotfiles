@@ -1,0 +1,44 @@
+#!/bin/sh
+
+#min=$(zenity --forms \
+       #--text "Welcome to StudyTracker" \
+       #--add-entry "Enter the Studing time" \
+       #--add-entry "Enter the Pause time")
+       ##--add-entry "")
+
+#echo $min > ~/.stuff/stuff.txt
+#study=$(cut -d '|' -f 1 ~/.stuff/stuff.txt)
+#echo $study
+##rm ~/.stuff/stuff.txt
+#pause=$(cut -d '|' -f 2 ~/.stuff/stuff.txt)
+#echo $pause
+#rm ~/.stuff/stuff.txt
+
+study=50
+pause=10
+
+s_min=$study
+echo "$s_min"
+s_sec=`expr 60 \* $study`
+p_min=$pause
+echo "$p_min"
+p_sec=$pause
+p_sec=`expr 60 \* $pause`
+
+#echo $s_sec
+#echo $p_sec
+
+i=0
+
+while [[ i -eq 0 ]]; do
+
+  herbe "The time to study has started" " " "We'll see in $s_min minutes"
+  sleep $s_sec 
+  herbe "Good job!" " " "Enjoy your $p_min minutes of break"
+  sleep $p_sec 
+  herbe "3.. 2.. 1.." " " "The pause is almost done!"
+  sleep 30 
+
+done
+
+exit 0

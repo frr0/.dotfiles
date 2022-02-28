@@ -216,7 +216,7 @@ workspace 2 output HDMI-A-1
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 
 #MIEI SHORTCUT
 bindsym $mod+t exec ~/Scaricati/Telegram/Telegram
@@ -236,6 +236,8 @@ bindsym $mod+i exec systemsettings5
 bindsym $mod+x exec xournalpp 
 bindsym $mod+o exec ~/.local/bin/scripts/toDo 
 bindsym $mod+shift+o exec codium ~/Dropbox\ \(Politecnico\ \Di\ \Torino\ \Studenti\)/ToDo/todo.txt
+bindsym $mod+a exec StudyTracker
+#bindsym $mod+space+s exec ~/.local/bin/scripts/StudyTracker
 #nvim ~/Dropbox (Politecnico Di Torino Studenti)/ToDo/todo.txt
 #bindsym $mod+Shift+a exec spectacle 
 #bindsym $mod+o exec Politecnico di Torino 
