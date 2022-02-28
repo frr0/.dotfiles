@@ -1,0 +1,5 @@
+#!/bin/sh
+
+toDo=$(cat ~/Dropbox\ \(Politecnico\ \Di\ \Torino\ \Studenti\)/ToDo/todo.txt)
+
+herbe "$toDo"

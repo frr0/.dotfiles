@@ -219,7 +219,8 @@ workspace 2 output HDMI-A-1
     bindsym $mod+a focus parent
 
 #MIEI SHORTCUT
-bindsym $mod+t exec telegram-desktop
+bindsym $mod+t exec ~/Scaricati/Telegram/Telegram
+#bindsym $mod+t exec telegram-desktop
 bindsym $mod+n exec nemo
 bindsym $mod+c exec firefox
 bindsym $mod+p exec evince
@@ -233,6 +234,9 @@ bindsym $mod+z exec codium
 bindsym $mod+i exec systemsettings5
 #bindsym $mod+b exec gestore-bluetooth
 bindsym $mod+x exec xournalpp 
+bindsym $mod+o exec ~/.local/bin/scripts/toDo 
+bindsym $mod+shift+o exec codium ~/Dropbox\ \(Politecnico\ \Di\ \Torino\ \Studenti\)/ToDo/todo.txt
+#nvim ~/Dropbox (Politecnico Di Torino Studenti)/ToDo/todo.txt
 #bindsym $mod+Shift+a exec spectacle 
 #bindsym $mod+o exec Politecnico di Torino 
 #bindsym $mod+Shift+s schermata
@@ -376,6 +380,10 @@ bindsym $mod+Shift+i exec $lockman
 #assign [class="kitty"] 2
 assign [class="Telegram"] 3
 assign [class="thunderbird"] 5
+
+set $float disable
+bindsym $mod+shift+f set $$float enable
+for_window [title="zenety"] floating $$float; set $$float disable
 
 #for_window [class="kitty"] floating enable
 #for_window [class="Kitty"] floating enable
