@@ -68,6 +68,7 @@ alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/sch
 alias sc="cd ~/.local/bin/scripts;la"
 alias pr="cd ~/Projects;la"
 alias co="codium ."
+alias pi="ssh pi@192.168.1.134"
 # alias pr="cd ~/Projects;la"
 bindkey 'C-j' 'Up'
 bindkey 'C-k' 'Down'

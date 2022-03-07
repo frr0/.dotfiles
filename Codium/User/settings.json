@@ -1122,7 +1122,7 @@
     "editor.tabSize": 2,
     "editor.cursorBlinking": "solid",
     "git.autofetch": true,
-    "workbench.activityBar.visible": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.activityBar.visible": false
 
 }
