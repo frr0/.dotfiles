@@ -4,8 +4,8 @@ end
 
 set fish_greeting
 
-export VISUAL="~/nvim.appimage"
-export EDITOR="~/nvim.appimage"
+#export VISUAL="~/nvim.appimage"
+#export EDITOR="~/nvim.appimage"
 
 alias r=ranger
 alias t=tmux
@@ -77,9 +77,9 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
 # these aliases take advantage of the previous function
-alias ggpull='git pull origin $(current_branch)'
-alias ggpush='git push origin $(current_branch)'
-alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
+#alias ggpull='git pull origin $(current_branch)'
+#alias ggpush='git push origin $(current_branch)'
+#alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 
 # Git and svn mix
 alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
