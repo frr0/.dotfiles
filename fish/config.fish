@@ -25,6 +25,7 @@ alias q=exit
 alias l=lazygit
 # alias n=~/nvim.appimage
 alias n=nvim
+alias a=cdh
 alias m=make
 alias b=bash
 alias c=clear
