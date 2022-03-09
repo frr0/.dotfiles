@@ -7,9 +7,10 @@ set fish_greeting
 export EDITOR=nvim
 fish_add_path ~/.local/bin/scripts
 
-alias _='sudo '
+#alias _='sudo '
 
 alias r=ranger
+alias s=source
 alias t=tmux
 alias q=exit
 alias l=lazygit
@@ -214,4 +215,9 @@ function _is_multiplexed
     set multiplexer "screen"
   end
   echo $multiplexer
+end
+
+function fish_user_key_bindings
+    bind \eu forward-word
+    bind \ei forward-char
 end
