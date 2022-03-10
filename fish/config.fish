@@ -247,4 +247,8 @@ set -U fish_pager_color_completion normal
 set -U fish_pager_color_description B3A06D yellow
 # set -U fish_pager_color_prefix normal --bold --underline
 # set -U fish_pager_color_progress cyan --background=yellow
-set fish_pager_color_description black
+# set fish_pager_color_description black
+# set fish_color_search_match --background=FF9940
+set fish_color_selection --background=black
+set fish_color_search_match --background=black
+# set fish_color_selection --background=FF9940
