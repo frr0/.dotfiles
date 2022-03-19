@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set -g FZF_CTRL_T_COMMAND "command find -L \$dir -type f 2> /dev/null | sed '1d; s#^\./##'"
+
 set fish_greeting
 
 export EDITOR=nvim
@@ -42,14 +44,10 @@ alias cy="cp -r ~/Projects/Project_create/py . && cd py && n client.py"
 alias cj="cp -r ~/Projects/Project_create/java . && cd java && n client.java"
 alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
 alias cm="cp -r ~/Projects/Project_create/md . && cd md && n note.md"
-alias lab="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/Algorithms_and_Data_Structure/ "
-alias apa="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/ADS/theory_ex/Algorithms_and_Data_Structure_Library"
-alias os="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Operating_Systems"
-alias oo="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_II.1/OOP/Object-oriented_Programming/Workspace"
-alias ne="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/Anno_III/Computer_Networks/Computer_Networks"
-alias td="cd ~/Dropbox\ \(Politecnico\ Di\ Torino\ Studenti\)/ToDo && n note.md"
 alias 19="cd ~/Projects/COVID-19"
-alias co="cd ~/Projects/COVID-19 && gl && cd ~ | zathura ~/Projects/COVID-19/schede-riepilogative/regioni/dpc-covid19-ita-scheda-regioni-latest.pdf"
+alias co="codium ."
+alias copy="xclip -selection clipboard"
+alias paste="xclip -selection clipboard -target image/png -out >"
 alias sc="cd ~/.local/bin/scripts;la"
 alias pi="ssh pi@192.168.1.134"
 
@@ -149,7 +147,7 @@ function fish_prompt
 
   # Line 1
   echo -n $white'╭─'$green$current_user$white' at '$blue$__fish_prompt_hostname$white' in '$yellow(pwd|sed "s=$HOME=~=")$turquoise
-  __fish_git_prompt " (%s)" 
+  __fish_git_prompt " (%s)"
   echo
 
   # Line 2

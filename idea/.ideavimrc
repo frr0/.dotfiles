@@ -1,0 +1,42 @@
+" mappings
+"===================================
+set relativenumber
+set number
+set ignorecase
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set cursorline
+"===================================
+let g:mapleader=","
+
+" save and exit
+nnoremap <leader>z :wqa <cr>
+nnoremap <space>s :wa <cr>
+nnoremap <space>0 :q! <cr>
+
+" move and tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <space>v :bn <cr>
+nnoremap \ 0
+vmap \ 0
+nnoremap 0 $
+vmap 0 $
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <space>w :vsp <cr>
+nnoremap <space>i :split <cr>
+vnoremap < <gv
+vnoremap > >gv
+
+" yank
+nnoremap Y y$
+nnoremap yt 0y$
+vnoremap <C-c> "+y
+
+" change all words
+nnoremap gc :%s/

@@ -226,6 +226,7 @@ bindsym $mod+c exec firefox
 bindsym $mod+p exec evince
 
 bindsym $mod+g exec chromium-browser
+bindsym $mod+a exec bash ~/Scaricati/android-studio/bin/studio.sh
 bindsym $mod+m exec thunderbird
 bindsym $mod+z exec codium 
 #bindsym $mod+s exec gnome-software
@@ -236,7 +237,7 @@ bindsym $mod+i exec systemsettings5
 bindsym $mod+x exec xournalpp 
 bindsym $mod+o exec ~/.local/bin/scripts/toDo 
 bindsym $mod+shift+o exec codium ~/Dropbox\ \(Politecnico\ \Di\ \Torino\ \Studenti\)/ToDo/todo.txt
-bindsym $mod+a exec StudyTracker
+bindsym $mod+y exec StudyTracker
 #bindsym $mod+space+s exec ~/.local/bin/scripts/StudyTracker
 #nvim ~/Dropbox (Politecnico Di Torino Studenti)/ToDo/todo.txt
 #bindsym $mod+Shift+a exec spectacle 
