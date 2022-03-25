@@ -8,6 +8,7 @@ set fish_greeting
 
 export EDITOR=nvim
 fish_add_path ~/.local/bin/scripts
+fish_add_path ~/.dotfiles/scripts/
 
 #alias _='sudo '
 

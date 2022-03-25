@@ -1,86 +1,118 @@
 #!/bin/sh
 
-echo "Remember: All your current dotfiles are going to be saved <dot>_OLD so that you won't lose them!"
-sleep 2
-
-echo "Do you want to install all the programs? [y][n]"
-read a
-
-#echo "Which OS/Distro are you on?"
-#echo "[1] = Fedora"
-#echo "[n/a] = to be implemented..."
-#read d
-
-echo "Do you want to replace your nvim config? [y][n]"
-read b
-
-if [[ $b -eq "y" ]]; then
-
-  cd ~/.config/nvim/
-  mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-  cd ~
-
-fi
-
-if [[ $a -eq "y" ]]; then
-
-  cd ~
-  sudo dnf install zsh tmux vim i3 kitty neovim polybar rofi ranger
-  sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg 
-  printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
-  sudo dnf install codium
-
-fi
-
+#set a ssh key if you use this in a new pc before running it!!!
 
 cd ~
-git clone git@github.com:frr0/Dotfiles.git
+git clone git@github.com:frr0/.dotfiles.git
+
+# Folders in .config
+
+# nvim
+if [ -d ~/.config/nvim ]; then
+  mv ~/.config/nvim ~/.config/nvim && git clone git@github.com:frr0/nvim.git
+else
+  git clone git@github.com:frr0/nvim.git
+fi
+
+# sway
+if [ -d ~/.config/sway ]; then
+  mv ~/.config/sway ~/.config/sway_OLD && mkdir ~/.config/sway && ln ~/.dotfiles/sway/* ~/.config/sway/
+else
+  mkdir ~/.config/sway && ln ~/.dotfiles/sway/* ~/.config/sway/
+fi
+
+# waybar
+if [ -d ~/.config/waybar ]; then
+  mv ~/.config/waybar ~/.config/waybar_OLD && mkdir ~/.config/waybar && ln ~/.dotfiles/waybar/* ~/.config/waybar/
+else
+  mkdir ~/.config/waybar && ln ~/.dotfiles/waybar/* ~/.config/waybar/
+fi
+
+# wofi
+if [ -d ~/.config/wofi ]; then
+  mv ~/.config/wofi ~/.config/wofi_OLD && mkdir ~/.config/wofi && ln ~/.dotfiles/wofi/* ~/.config/wofi/
+else
+  mkdir ~/.config/wofi && ln ~/.dotfiles/wofi/* ~/.config/wofi/
+fi
+
+# kitty
+if [ -d ~/.config/kitty ]; then
+  mv ~/.config/kitty ~/.config/kitty_OLD && mkdir ~/.config/kitty && ln ~/.dotfiles/kitty/* ~/.config/kitty/
+else
+  mkdir ~/.config/kitty && ln ~/.dotfiles/kitty/* ~/.config/kitty/
+fi
+
+# fish
+if [ -d ~/.config/fish ]; then
+  mv ~/.config/fish ~/.config/fish_OLD && mkdir ~/.config/fish && ln ~/.dotfiles/fish/* ~/.config/fish/
+else
+  mkdir ~/.config/fish && ln ~/.dotfiles/fish/* ~/.config/fish/
+fi
+
+# ranger
+if [ -d ~/.config/ranger ]; then
+  mv ~/.config/ranger ~/.config/ranger_OLD && mkdir ~/.config/ranger && ln ~/.dotfiles/ranger/* ~/.config/ranger/
+else
+  mkdir ~/.config/ranger && ln ~/.dotfiles/ranger/* ~/.config/ranger/
+fi
+
+# nvim-codium
+if [ -d ~/.config/nvim-codium ]; then
+  mv ~/.config/nvim-codium ~/.config/nvim-codium_OLD && git clone git@github.com:frr0/nvim-vscodium.git
+else
+  git clone git@github.com:frr0/nvim-vscodium.git
+fi
+
+# idea
+if [ -d ~/.config/Vim-Idea ]; then
+  mv ~/.config/Vim-Idea ~/.config/Vim-Idea_OLD && git clone git@github.com:MyPC-dotfiles/Vim-Idea.git
+else
+  git clone git@github.com:MyPC-dotfiles/Vim-Idea.git
+fi
+
+# Files in ~
+
+# vim
+if [ -e ~/.vimrc ]; then
+  mv .vimrc .vimrc_OLD && ln ~/.dotfiles/vim/.vimrc ~
+else
+  ln ~/.dotfiles/vim/.vimrc ~
+fi
+
+# ideavim
+if [ -e ~/.ideavimrc ]; then
+  mv .ideavimrc .ideavimrc_OLD && ln ~/.dotfiles/idea/.ideavimrc ~
+else
+  ln ~/.dotfiles/idea/.ideavimrc ~
+fi
+
+# tmux
+if [ -e ~/.tmux.conf ]; then
+  mv .tmux.conf .tmux.conf_OLD && ln ~/.dotfiles/tmux/.tmux.conf ~
+else
+  ln ~/.dotfiles/tmux/.tmux.conf ~
+fi
+
+# git projects
 
 cd ~
+mkdir projects
+cd projects
 
-#~ home
+git clone git@github.com:frr0/Project_create.git
 
-mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-mv .zshrc .zshrc_OLD && mv ~/.dotfiles/zsh/.zshrc ~/.zshrc && ln .zshrc ~/.dotfiles/zsh/
-mv .tmux.conf .tmux.conf_OLD && mv ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf && ln .tmux.conf ~/.dotfiles/tmux/
-mv .vimrc .vimrc_OLD && mv ~/.dotfiles/vim/.vimrc ~/.vimrc && ln .vimrc ~/.dotfiles/vim/
+# install program for my rice
 
-#.config
+cd ~
+sudo dnf install neovim python fzf ranger valgrind pandoc firefox telegram-desktop thunderbird xournalpp vlc zathura polybar wofi sway waybar wlr-randr brightnessctl swaylock pavucontrol wl-copy nemo
+sudo dnf copr enable atim/lazygit -y
+sudo dnf install lazygit
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg 
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
+sudo dnf install codium
 
-#!! To be done !!
-
-#cd ~/.config/i3/
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-#cd ~/.config/kitty/
-#mv kitty.conf kitty.conf_OLD && mv ~/.dotfiles/kitty/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/kitty/
-
-#cd ~/.config/Codium/
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-## required for vscodium nvim plugin
-
-#cd ~
-#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-#cd ~/.config/polybar/
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-#cd ~/.config/rofi/
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-#cd ~/.config/ranger/
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-##Projects
-
-#cd ~/Projects/Project_create
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
-
-##Scripts
-
-#cd .local/bin/scripts
-#mv .bashrc .bashrc_OLD && mv ~/.dotfiles/bash/.bashrc ~/.bashrc && ln .bashrc ~/.dotfiles/bash/
+# fish fzf
+cd ~
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install jethrokuan/fzf

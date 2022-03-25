@@ -226,7 +226,7 @@ bindsym $mod+c exec firefox
 bindsym $mod+p exec evince
 
 bindsym $mod+g exec chromium-browser
-bindsym $mod+a exec bash ~/Scaricati/android-studio/bin/studio.sh
+bindsym $mod+a exec bash /usr/local/android-studio/bin/studio.sh 
 bindsym $mod+m exec thunderbird
 bindsym $mod+z exec codium 
 #bindsym $mod+s exec gnome-software
