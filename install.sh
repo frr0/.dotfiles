@@ -1,6 +1,13 @@
 #!/bin/sh
 
-#set a ssh key if you use this in a new pc before running it!!!
+# set a ssh key if you use this in a new pc before running it
+# ssh-keygen -t ed25519 -C "your_email@example.com"
+# cat ~/.ssh/id_ed25519.pub
+# Then select and copy the contents of the id_ed25519.pub file
+# displayed in the terminal to your clipboard
+# settngs/ssh keys
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
 cd ~
 git clone git@github.com:frr0/.dotfiles.git
