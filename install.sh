@@ -100,6 +100,7 @@ mkdir projects
 cd projects
 
 git clone git@github.com:frr0/Project_create.git
+git clone git@github.com:frr0/Programs_on_my_pc.git
 
 # install program for my rice
 
