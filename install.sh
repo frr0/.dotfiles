@@ -124,3 +124,4 @@ sudo dnf install codium
 cd ~
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install jethrokuan/fzf
+git clone git@github.com:dudik/herbe.git
