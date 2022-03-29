@@ -9,6 +9,8 @@ set fish_greeting
 export EDITOR=nvim
 fish_add_path ~/.local/bin/scripts
 fish_add_path ~/.dotfiles/scripts/
+fish_add_path ~/.cargo/bin
+fish_add_path _JAVA_AWT_WM_NONREPARENTING=1
 
 #alias _='sudo '
 

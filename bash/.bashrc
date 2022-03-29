@@ -58,3 +58,4 @@ fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n"
 # export PATH="$PATH:$HOME/fra/.local/bin/lvim"
 # export PATH="$PATH:.local/bin/lvim"
 #
+. "$HOME/.cargo/env"
