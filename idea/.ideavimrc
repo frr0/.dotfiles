@@ -40,3 +40,47 @@ vnoremap <C-c> "+y
 
 " change all words
 nnoremap gc :%s/
+
+"===================================
+" which-key
+"===================================
+
+set which-key
+
+" disable the timeout option
+set notimeout
+
+" increase the timeoutlen (default: 1000)
+set timeoutlen = 5000
+
+" make the popup show up 'instantly'
+let g:WhichKey_DefaultDelay = 0
+
+let g:WhichKeyDesc_commentray_prefix = "cu"
+let g:WhichKeyDesc_commentray_action = "cc"
+
+let g:WhichKeyDesc_windows        = "<Space>w  Windows"
+let g:WhichKeyDesc_windows_delete = "<Space>wd delete"
+let g:WhichKeyDesc_windows_split  = "<Space>w split below"
+
+source ~/.intellimacs/spacemacs.vim
+
+" (Optional) Enable other Intellimacs modules
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+" (Optional) Enable which-key plugin
+source ~/.intellimacs/which-key.vim
+
+" (Optional) My own vim commands
+nnoremap Y y$
+
+" (Optional) Comma for major mode
+nmap , <leader>m
+vmap , <leader>m
+
+" (Optional) Add/edit actions
+nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+vnoremap <leader>gl    :action Vcs.Show.Log<CR>
+

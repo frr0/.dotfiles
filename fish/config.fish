@@ -10,10 +10,8 @@ export EDITOR=nvim
 fish_add_path ~/.local/bin/scripts
 fish_add_path ~/.dotfiles/scripts/
 fish_add_path ~/.cargo/bin
-fish_add_path _JAVA_AWT_WM_NONREPARENTING=1
 
-#alias _='sudo '
-
+alias _="sudo "
 alias r=ranger
 alias s=source
 alias t=tmux
@@ -53,6 +51,8 @@ alias copy="xclip -selection clipboard"
 alias paste="xclip -selection clipboard -target image/png -out >"
 alias sc="cd ~/.local/bin/scripts;la"
 alias pi="ssh pi@192.168.1.134"
+alias ideaj="_JAVA_AWT_WM_NONREPARENTING=1 /opt/idea-IC-213.7172.25/bin/idea.sh"
+alias ideaa="_JAVA_AWT_WM_NONREPARENTING=1 /usr/local/android-studio/bin/studio.sh"
 
 # Aliases
 alias g='git'
