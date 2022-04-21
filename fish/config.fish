@@ -11,7 +11,7 @@ fish_add_path ~/.local/bin/scripts
 fish_add_path ~/.dotfiles/scripts/
 fish_add_path ~/.cargo/bin
 
-alias _="sudo "
+# alias _="sudo "
 alias r=ranger
 alias s=source
 alias t=tmux
@@ -31,7 +31,7 @@ alias zc="n ~/.zshrc"
 alias szc="source ~/.zshrc"
 alias v="n -S"
 alias p="n -p"
-alias nn="cd ~/.config/nvim/ && n init.vim"
+alias nn="cd ~/.config/nvim/ && n init.lua"
 alias i3="n ~/.config/i3/config"
 alias la="ls -lah"
 alias lh="ls -lh"
@@ -253,3 +253,6 @@ set -U fish_pager_color_description B3A06D yellow
 set fish_color_selection --background=black
 set fish_color_search_match --background=black
 # set fish_color_selection --background=FF9940
+
+# Created by `userpath` on 2022-04-15 08:01:27
+set PATH $PATH /home/fra/.local/bin
