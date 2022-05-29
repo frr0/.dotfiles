@@ -10,6 +10,7 @@ export EDITOR=nvim
 fish_add_path ~/.local/bin/scripts
 fish_add_path ~/.dotfiles/scripts/
 fish_add_path ~/.cargo/bin
+fish_add_path ~/dev/flutter/bin/
 
 # alias _="sudo "
 alias r=ranger
@@ -18,7 +19,8 @@ alias t=tmux
 alias q=exit
 alias l=lazygit
 # alias n=~/nvim.appimage
-alias n=nvim
+# alias n=nvim
+alias n=lvim
 alias a=cdh
 alias m=make
 alias b=bash
@@ -38,13 +40,14 @@ alias lh="ls -lh"
 alias e="cd .. && cd .. && cd run/media/"
 alias dot="cd ~/.dotfiles"
 alias mt="xrandr --output eDP-1 --off && xrandr --output DP-1 --auto --left-of HDMI-1"
-alias cc="cp -r ~/Projects/Project_create/c . && cd c && n client.c"
-alias ccc="cp -r ~/Projects/Project_create/c_adv . && cd c_adv && n client.c"
-alias ccp="cp -r ~/Projects/Project_create/cpp . && cd cpp && n client.cpp"
-alias cy="cp -r ~/Projects/Project_create/py . && cd py && n client.py"
-alias cj="cp -r ~/Projects/Project_create/java . && cd java && n client.java"
-alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && chmod +x program.sh && n program.sh"
-alias cm="cp -r ~/Projects/Project_create/md . && cd md && n note.md"
+alias cc="cp -r ~/Projects/Project_create/c . && cd c && git init && n client.c"
+alias ccc="cp -r ~/Projects/Project_create/c_adv . && cd c_adv && git init && n client.c"
+alias ccp="cp -r ~/Projects/Project_create/cpp . && cd cpp && git init && n client.cpp"
+alias cy="cp -r ~/Projects/Project_create/py . && cd py && git init && n client.py"
+alias cj="cp -r ~/Projects/Project_create/java . && cd java && git init && n client.java"
+alias cs="cp -r ~/Projects/Project_create/sh . && cd sh && git init && chmod +x program.sh && n program.sh"
+alias cm="cp -r ~/Projects/Project_create/md . && cd md && git init && n note.md"
+alias cl="cp -r ~/Projects/Project_create/latex . && cd latex && chmod +x create.sh && ./create.sh && n main.tex"
 alias 19="cd ~/Projects/COVID-19"
 alias co="codium ."
 alias copy="xclip -selection clipboard"

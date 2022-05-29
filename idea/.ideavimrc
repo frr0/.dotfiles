@@ -74,7 +74,7 @@ source ~/.intellimacs/hybrid.vim
 source ~/.intellimacs/which-key.vim
 
 " (Optional) My own vim commands
-nnoremap Y y$
+" nnoremap Y y$
 
 " (Optional) Comma for major mode
 nmap , <leader>m
